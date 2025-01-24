@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmmg85tftws1a"]
 
-[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_t1lyx"]
+[ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
 rough = true
@@ -25,10 +25,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_hdgp2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.224781, 0.974409, 0, -0.974409, 0.224781, 0, 4.26108, 2.86125)
-
-[node name="DragableObject" parent="." instance=ExtResource("1_t1lyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740786, 0.886499, 1.37793)
+transform = Transform3D(1, 0, 0, 0, 0.224781, 0.974409, 0, -0.974409, 0.224781, 0, 8.66603, 1.27514)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.810256, -0.444944, 0.381457, 0, 1.40698, 0)
@@ -36,5 +33,5 @@ transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.8
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.53366, 0.622478)
 
-[node name="DragableObject2" parent="." instance=ExtResource("1_t1lyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85271, 0.964215, 2.00933)
+[node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
+transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, -0.190714, 0.05, -6.30688)
