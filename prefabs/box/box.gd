@@ -4,6 +4,8 @@ class_name Box
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer;
 @onready var containerArea: Area3D = $BoxContainerArea;
 
+var isOpen: bool = false;
+
 var itemsInTheBox: Array[DragableObject] = [];
 
 func _ready():
@@ -16,9 +18,12 @@ func _process(delta):
 
 func open():
 	animPlayer.play("Open");
+	isOpen = true;
 
 func close():
 	animPlayer.play_backwards("Open");
+	await animPlayer.animation_finished;
+	isOpen = false;
 
 func onObjectEntered(body: Node3D):
 	if(body is not DragableObject):
