@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdbj04w7o66c7"]
+[gd_scene load_steps=3 format=3 uid="uid://bdbj04w7o66c7"]
 
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_61ujb"]
+[ext_resource type="ArrayMesh" uid="uid://cvwie1pd0k3hp" path="res://models/bubbleWrapModel.res" id="2_wfrer"]
 
 [node name="DragableObject" instance=ExtResource("1_61ujb")]
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = ExtResource("2_wfrer")
