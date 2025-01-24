@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5wwb7xdhs46w"
-path="res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.ctex"
+uid="uid://d0ac2feqbwiom"
+path="res://.godot/imported/box_s_box_s.png-9106a91ac0aa6a783150a7e16832f3b7.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "37c797669441fcd583a1f13e49544154"
 }
 
 [deps]
 
-source_file="res://textures/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.ctex"]
+source_file="res://assets/models/box_s_box_s.png"
+dest_files=["res://.godot/imported/box_s_box_s.png-9106a91ac0aa6a783150a7e16832f3b7.ctex"]
 
 [params]
 
