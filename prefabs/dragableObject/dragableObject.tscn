@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwh5582l31gnm"]
+[gd_scene load_steps=6 format=3 uid="uid://cwh5582l31gnm"]
 
 [ext_resource type="Script" path="res://prefabs/dragableObject/dragable_object.gd" id="1_41c0n"]
+[ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="2_8yv21"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
@@ -19,5 +20,12 @@ shape = SubResource("BoxShape3D_wf7ck")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_053v4")
 skeleton = NodePath("../..")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+top_level = true
+size = Vector3(2, 10, 2)
+texture_albedo = ExtResource("2_8yv21")
+lower_fade = 0.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

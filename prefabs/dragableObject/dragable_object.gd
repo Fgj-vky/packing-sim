@@ -5,6 +5,8 @@ var highlighted: bool = false
 var dragging: bool = false
 var targetRotation = Vector3(0, 0, 0)
 
+@onready var shadowDecal: Decal = $Decal
+
 @onready var meshInstance = $MeshInstance3D
 
 # Called when the node enters the scene tree for the first time.
@@ -13,8 +15,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# func _process(delta):
-# 	pass
+func _process(delta):
+	var pos = global_position
+	shadowDecal.set_position(Vector3(pos.x, pos.y - 6, pos.z))
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if dragging:
