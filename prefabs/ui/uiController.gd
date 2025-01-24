@@ -4,10 +4,12 @@ class_name UiController
 @export var gameController: GameController
 @onready var currentBoxLabel: Label = $HBoxContainer/Label
 @onready var boxFillAmount: TextureProgressBar = $HBoxContainer/BoxFillBar
+@onready var fade: TextureRect = $Fade;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	boxFillAmount.visible = false;
+	fade.modulate = Color.TRANSPARENT;
 	pass # Replace with function body.
 
 
@@ -43,3 +45,8 @@ func _on_s_button_pressed():
 
 func hideBoxFillDisplay():
 	boxFillAmount.visible = false;
+
+func fadeToBlack():
+	var tween = fade.create_tween();
+	tween.tween_property(fade, "modulate", Color.WHITE, 1);
+	await tween.finished;

@@ -9,6 +9,8 @@ var currentBoxObject: Box = null
 var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
+@onready var dayTimer: Timer = $DayTimer;
+
 func createNewSBox():
 	createNewBox(boxSPrefab)
 
@@ -38,7 +40,6 @@ func closeCurrentBox():
 	uiLayer.hideBoxFillDisplay()
 	currentBoxObject.close()
 
-
 func sendBoxAway():
 	if currentBoxObject == null:
 		return
@@ -57,10 +58,14 @@ func sendBoxAway():
 	currentBoxObject = null
 	uiLayer.setCurrentBoxObject(null)
 
-	
+func endDay():
+	#await uiLayer.fadeToBlack();
+	print("scene change")
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	dayTimer.timeout.connect(endDay);
 	pass # Replace with function body.
 
 
