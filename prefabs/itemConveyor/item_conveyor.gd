@@ -26,21 +26,31 @@ func _process(delta):
         timer = time;
         SpawnItem();
 
-    for item : RigidBody3D in itemsMoving:
+    var itemsToRemove = [];
+    for item : DragableObject in itemsMoving:
         var targetPos = itemsMoving[item];
-        if(item.position.x >= targetPos.x):
+        if(item.position.x >= targetPos.x || item.dragging):
+            item.linear_velocity = Vector3(0,0,0);
+            itemsToRemove.append(item);
             continue;
-        item.move_and_collide(Vector3(conveyorSpeed * delta,0 ,0));
-
+        
+        item.linear_velocity = Vector3(conveyorSpeed, 0 ,0) + item.get_gravity();
         pass
+
+    # Remove items that are no longer moved
+    for item in itemsToRemove:
+        itemsMoving.erase(item);
+        pass
+    
+    # Remove items that are being dragged
+    itemsOnBelt = itemsOnBelt.filter(func(item: DragableObject): return !item.dragging);
     pass
 
 func SpawnItem():
-    var nextItem: RigidBody3D = items.pick_random().instantiate() as RigidBody3D;
+    var nextItem: DragableObject = items.pick_random().instantiate() as DragableObject;
     nextItem.position = spawnPoint.position;
     itemHolder.add_child(nextItem);
 
     itemsOnBelt.append(nextItem);
     itemsMoving[nextItem] = position - Vector3(itemsOnBelt.size() * itemSpacing,0,0);
-    
     pass
