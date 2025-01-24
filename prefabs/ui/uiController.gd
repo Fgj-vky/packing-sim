@@ -26,7 +26,7 @@ func setCurrentBoxObject(box: Node3D):
 		boxBox.fill_amount_changed.connect(updateBoxFillDisplay)
 
 func updateBoxFillDisplay(amount: float):
-	boxFillAmount.value = (log(amount) + 2) * 50;
+	boxFillAmount.value = clamp((log(amount) + 2) * 50, 0, 100);
 	pass
 
 func _on_close_button_pressed():
