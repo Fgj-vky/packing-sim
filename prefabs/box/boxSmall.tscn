@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://besisj1gpoykd"]
+[gd_scene load_steps=24 format=3 uid="uid://cml5cbtxvn21c"]
 
 [ext_resource type="PackedScene" uid="uid://cav2yndbgwaek" path="res://assets/models/box_s.glb" id="1_6nsel"]
 [ext_resource type="Script" path="res://prefabs/box/box.gd" id="2_yk7ld"]
@@ -67,7 +67,7 @@ points = PackedVector3Array(-0.239384, 0.332048, 0.25026, -0.16239, 0.187695, -0
 points = PackedVector3Array(0.251498, 0.322424, 0.25026, 0.145684, 0.18777, -0.25, 0.164894, 0.187695, -0.25026, 0.24187, 0.332048, -0.25026, 0.145629, 0.216594, 0.25026, 0.164894, 0.187695, 0.25026, 0.24187, 0.293554, -0.25026, 0.212999, 0.312801, -0.25026, 0.232243, 0.332048, 0.25026, 0.145629, 0.216594, -0.25026, 0.203372, 0.235841, 0.25026, 0.24187, 0.293554, 0.25026, 0.212999, 0.312801, 0.25026, 0.145684, 0.18777, 0.25, 0.251498, 0.312801, -0.25026, 0.174521, 0.197347, -0.25026, 0.232243, 0.332048, -0.25026, 0.203372, 0.235841, -0.25026, 0.24187, 0.332048, 0.25026, 0.251498, 0.322424, -0.25026, 0.251498, 0.312801, 0.25026, 0.174521, 0.197347, 0.25026)
 
 [node name="BoxS" instance=ExtResource("1_6nsel")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 0)
 script = ExtResource("2_yk7ld")
 
 [node name="Skeleton3D" parent="box_s_rig" index="0"]
