@@ -9,6 +9,7 @@
 size = Vector3(6.18848, 0.0187988, 1.01855)
 
 [node name="ItemConveyor" type="Node3D"]
+transform = Transform3D(2.22361, 0, 0, 0, 1, 0, 0, 0, 1.98184, 0, 0, 0)
 script = ExtResource("1_cgf3e")
 items = Array[PackedScene]([ExtResource("2_f6fk4")])
 
