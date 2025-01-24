@@ -5,8 +5,10 @@ class_name Box
 @onready var containerArea: Area3D = $BoxContainerArea;
 
 var isOpen: bool = false;
+@export var containerSize: int = 3;
 
 var itemsInTheBox: Array[DragableObject] = [];
+var fillAmount: int = 0;
 
 func _ready():
 	containerArea.body_entered.connect(onObjectEntered);
@@ -28,14 +30,26 @@ func close():
 func onObjectEntered(body: Node3D):
 	if(body is not DragableObject):
 		return;
-
-	itemsInTheBox.append(body);
+	
+	var item = body as DragableObject
+	itemsInTheBox.append(item);
+	fillAmount += item.itemSize;
+	print("box is " + str(fillPrecentage()) + "%% full!");
 	pass
 
 func onObjectRemoved(body: Node3D):
 	if(body is not DragableObject):
 		return;
-	var itemIndex = itemsInTheBox.find(body);		
+		
+	var item = body as DragableObject
+	var itemIndex = itemsInTheBox.find(item);		
 	if(itemIndex >= 0):
 		itemsInTheBox.remove_at(itemIndex);
+		fillAmount -= item.itemSize;
+		print("box is " + str(fillPrecentage() * 100) + "%% full!"); 
 	pass
+
+func isBoxTooFull() -> bool:
+	return fillAmount > containerSize;
+func fillPrecentage() -> float:
+	return fillAmount as float / containerSize;
