@@ -3,26 +3,25 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5wwb7xdhs46w"
-path.s3tc="res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.s3tc.ctex"
+path="res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.s3tc.ctex"]
+dest_files=["res://.godot/imported/shadow.png-7612836bee885b8ff4de477fcb4dc22f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
