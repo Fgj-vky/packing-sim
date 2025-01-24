@@ -26,6 +26,13 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		var max_accelaration = 10
 		var acceleration = direction * min(max_accelaration, distance)
 		self.apply_torque_impulse(acceleration)
+	else:
+		# Limit velocity to max 5
+		var velocity = state.get_linear_velocity()
+		if velocity.length() > 5:
+			velocity = velocity.normalized() * 5
+			state.set_linear_velocity(velocity)
+
 
 
 
