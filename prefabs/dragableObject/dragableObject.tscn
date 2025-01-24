@@ -6,14 +6,11 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_053v4"]
 
-[node name="DragableObject" type="Node3D"]
+[node name="DragableObject" type="RigidBody3D"]
 script = ExtResource("1_41c0n")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_wf7ck")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_053v4")
-skeleton = NodePath("../..")
