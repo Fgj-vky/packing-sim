@@ -11,6 +11,8 @@ var isOpen: bool = false;
 var itemsInTheBox: Array[DragableObject] = [];
 var fillAmount: int = 0;
 
+signal fill_amount_changed(new_value:float);
+
 func _ready():
 	containerArea.body_entered.connect(onObjectEntered);
 	containerArea.body_exited.connect(onObjectRemoved);
@@ -41,6 +43,7 @@ func onObjectEntered(body: Node3D):
 	var item = body as DragableObject
 	itemsInTheBox.append(item);
 	fillAmount += item.itemSize;
+	fill_amount_changed.emit(fillPrecentage())
 	print("box is " + str(fillPrecentage()) + "%% full!");
 	pass
 
@@ -53,6 +56,7 @@ func onObjectRemoved(body: Node3D):
 	if(itemIndex >= 0):
 		itemsInTheBox.remove_at(itemIndex);
 		fillAmount -= item.itemSize;
+		fill_amount_changed.emit(fillPrecentage())
 		print("box is " + str(fillPrecentage() * 100) + "%% full!"); 
 	pass
 
