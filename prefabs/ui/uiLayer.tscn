@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3cqrd5mkwyjx"]
+
+[ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
+
+[node name="UiLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_ixsxp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 322.0
+offset_bottom = 144.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="lButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "Create large Box"
+
+[node name="mButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Create medium Box"
+
+[node name="sButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Create small Box"
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="sendButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Send current box Away"
+
+[node name="closeButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Close Box"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Current box: null"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/sendButton" to="." method="_on_send_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
