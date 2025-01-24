@@ -29,3 +29,4 @@ texture_albedo = ExtResource("2_8yv21")
 lower_fade = 0.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

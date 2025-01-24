@@ -1,16 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=7 format=3 uid="uid://cmmg85tftws1a"]
 
+[ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
-[ext_resource type="PackedScene" uid="uid://c45taotforghn" path="res://prefabs/box/boxMedium.tscn" id="2_up013"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
 rough = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wvca3"]
-size = Vector2(10, 10)
+size = Vector2(30, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdgp2"]
-size = Vector3(10, 0.1, 10)
+size = Vector3(30, 0.1, 10)
 
 [node name="ItemDragScene" type="Node3D"]
 
@@ -37,5 +37,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.5336
 [node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
 transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, -0.190714, 0.05, -6.30688)
 
-[node name="BoxMedium" parent="." instance=ExtResource("2_up013")]
-transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 2.77322)
+[node name="GameController" parent="." node_paths=PackedStringArray("boxLocation", "boxExitLocation") instance=ExtResource("2_4ef7o")]
+boxLocation = NodePath("BoxPosition")
+boxExitLocation = NodePath("BoxOffScreenPosition")
+
+[node name="BoxOffScreenPosition" type="Node3D" parent="GameController"]
+transform = Transform3D(0.98682, 0.0555052, -0.152003, -0.0440655, 0.996009, 0.0776228, 0.155705, -0.0699017, 0.985327, -11.3618, 0.232139, 2.50068)
+
+[node name="BoxPosition" type="Node3D" parent="GameController"]
+transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, 0.522106, 0, 2.51696)

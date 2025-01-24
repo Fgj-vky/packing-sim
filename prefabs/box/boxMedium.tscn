@@ -14,10 +14,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 script = ExtResource("2_1h2tv")
 
 [node name="Skeleton3D" parent="box_m_rig" index="0"]
-bones/1/rotation = Quaternion(2.43529e-07, 1.12215e-07, -0.300706, 0.953717)
-bones/2/rotation = Quaternion(1.71835e-07, -3.39598e-07, 0.300706, 0.953717)
-bones/3/rotation = Quaternion(-0.212631, 0.674379, -0.212631, 0.67438)
-bones/4/rotation = Quaternion(-0.212631, 0.67438, 0.212631, -0.67438)
+bones/1/rotation = Quaternion(-2.42783e-07, -2.08105e-08, 0.707107, 0.707107)
+bones/2/rotation = Quaternion(-7.41956e-08, -1.47777e-07, -0.707107, 0.707107)
+bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/4/rotation = Quaternion(0.5, 0.5, -0.5, -0.5)
 
 [node name="BoxContainerArea" type="Area3D" parent="." index="2"]
 
