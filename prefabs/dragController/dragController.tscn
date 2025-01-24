@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csr71efl4x103"]
+
+[ext_resource type="Script" path="res://prefabs/dragController/drag_controller.gd" id="1_pmkiw"]
+
+[node name="DragController" type="Node"]
+script = ExtResource("1_pmkiw")
