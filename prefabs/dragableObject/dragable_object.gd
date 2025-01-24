@@ -11,10 +11,12 @@ var targetRotation = Vector3(0, 0, 0)
 
 @export var itemSize: int = 1
 
+signal picked_up;
+signal released;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,9 +40,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 			velocity = velocity.normalized() * 5
 			state.set_linear_velocity(velocity)
 
-
-
-
 func _on_mouse_entered():
 	if DragControllerNode.isFree:
 		DragControllerNode.setHighlighted(self)
@@ -48,10 +47,18 @@ func _on_mouse_entered():
 		var tween = get_tree().create_tween()
 		tween.tween_property(meshInstance, "scale", Vector3(1.1, 1.1, 1.1), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 
-
 func _on_mouse_exited():
 	if highlighted:
 		DragControllerNode.setHighlighted(null)
 		highlighted = false
 		var tween = get_tree().create_tween()
 		tween.tween_property(meshInstance, "scale", Vector3(1, 1, 1), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+
+func pickUp():
+	dragging = true;
+	picked_up.emit();
+	pass
+func release():
+	dragging = false;
+	released.emit();
+	pass

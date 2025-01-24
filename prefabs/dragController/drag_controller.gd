@@ -43,7 +43,7 @@ func startDragging(dragableObject: DragableObject) -> void:
 	currentDragObject = dragableObject
 	currentDragObject.linear_damp = 15
 	currentDragObject.angular_damp = 15
-	currentDragObject.dragging = true
+	currentDragObject.pickUp();
 	Input.set_custom_mouse_cursor(load("res://textures/Hand_Drag2.png"))
 	
 func _input(event):
@@ -57,6 +57,6 @@ func _input(event):
 				dragging = false
 				currentDragObject.linear_damp = 0
 				currentDragObject.angular_damp = 0
-				currentDragObject.dragging = false
+				currentDragObject.release();
 				currentDragObject = null
 				Input.set_custom_mouse_cursor(load("res://textures/Hand2.png"))

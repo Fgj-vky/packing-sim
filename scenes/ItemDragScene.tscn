@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=7 format=3 uid="uid://cmmg85tftws1a"]
 
+[ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 
@@ -46,3 +47,6 @@ transform = Transform3D(0.98682, 0.0555052, -0.152003, -0.0440655, 0.996009, 0.0
 
 [node name="BoxPosition" type="Node3D" parent="GameController"]
 transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, 0.522106, 0, 2.51696)
+
+[node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84153, 0, 0)
