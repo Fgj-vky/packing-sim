@@ -29,9 +29,8 @@ func _process(delta):
     for item : RigidBody3D in itemsMoving:
         var targetPos = itemsMoving[item];
         if(item.position.x >= targetPos.x):
+            item.linear_velocity = Vector3(0,0,0);
             continue;
-        item.move_and_collide(Vector3(conveyorSpeed * delta,0 ,0));
-
         pass
     pass
 
@@ -42,5 +41,5 @@ func SpawnItem():
 
     itemsOnBelt.append(nextItem);
     itemsMoving[nextItem] = position - Vector3(itemsOnBelt.size() * itemSpacing,0,0);
-    
+    nextItem.linear_velocity += Vector3(conveyorSpeed, 0 ,0);
     pass
