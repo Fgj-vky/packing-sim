@@ -3,7 +3,7 @@ extends Node
 var dragging: bool = false
 var currentDragObject: DragableObject = null
 var highlightedObject: DragableObject = null
-var distance = 3
+var distanceFromScreen = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,8 +15,15 @@ func _process(delta):
 	if dragging and currentDragObject != null:
 		var mousePos = get_viewport().get_mouse_position()
 		var ray = get_viewport().get_camera_3d().project_ray_origin(mousePos)
-		var target = ray + get_viewport().get_camera_3d().project_ray_normal(mousePos) * 3
-		currentDragObject.set_global_transform(Transform3D(Basis(), target))
+		var target = ray + get_viewport().get_camera_3d().project_ray_normal(mousePos) * distanceFromScreen
+		var difference = target - currentDragObject.global_transform.origin
+		var direction = difference.normalized()
+		var distance = difference.length()
+		var max_accelaration = 1000
+		var acceleration = direction * min(max_accelaration, distance * 100)
+
+		currentDragObject.apply_force(acceleration)
+
 
 func isFree() -> bool:
 	return dragging or highlightedObject != null
@@ -34,6 +41,9 @@ func startDragging(dragableObject: DragableObject) -> void:
 		return
 	dragging = true
 	currentDragObject = dragableObject
+	currentDragObject.linear_damp = 15
+	currentDragObject.angular_damp = 15
+	currentDragObject.dragging = true
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -44,4 +54,7 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if dragging:
 				dragging = false
+				currentDragObject.linear_damp = 0
+				currentDragObject.angular_damp = 0
+				currentDragObject.dragging = false
 				currentDragObject = null

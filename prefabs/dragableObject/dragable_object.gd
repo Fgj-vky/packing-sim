@@ -1,8 +1,9 @@
-extends Node3D
+extends RigidBody3D
 class_name DragableObject
 
 var highlighted: bool = false
-
+var dragging: bool = false
+var targetRotation = Vector3(0, 0, 0)
 
 @onready var meshInstance = $MeshInstance3D
 
@@ -15,6 +16,17 @@ func _ready():
 # func _process(delta):
 # 	pass
 
+func _integrate_forces(state: PhysicsDirectBodyState3D):
+	if dragging:
+		# Tween rotation to target rotation
+		var currentRotation = self.global_transform.basis.get_euler()
+		var difference = targetRotation - currentRotation
+		var direction = difference.normalized()
+		var distance = difference.length()
+		var max_accelaration = 10
+		var acceleration = direction * min(max_accelaration, distance)
+		self.apply_torque_impulse(acceleration)
+
 
 
 func _on_mouse_entered():
@@ -22,7 +34,7 @@ func _on_mouse_entered():
 		DragControllerNode.setHighlighted(self)
 		highlighted = true
 		var tween = get_tree().create_tween()
-		tween.tween_property(meshInstance, "scale", Vector3(1.2, 1.2, 1.2), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+		tween.tween_property(meshInstance, "scale", Vector3(1.1, 1.1, 1.1), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 
 
 func _on_mouse_exited():
