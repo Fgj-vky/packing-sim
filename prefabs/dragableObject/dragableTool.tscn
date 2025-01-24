@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://con5blwk6qls1"]
+
+[ext_resource type="Script" path="res://prefabs/dragableObject/dragableTool.gd" id="1_0rfsr"]
+[ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="2_44t55"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
+friction = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_42tu3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_053v4"]
+
+[node name="DragableTool" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_4h5ay")
+script = ExtResource("1_0rfsr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_42tu3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_053v4")
+skeleton = NodePath("../..")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+top_level = true
+size = Vector3(2, 10, 2)
+texture_albedo = ExtResource("2_44t55")
+lower_fade = 0.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
