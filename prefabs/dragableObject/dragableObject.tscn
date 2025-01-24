@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://prefabs/dragableObject/dragable_object.gd" id="1_41c0n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
-friction = 0.0
+friction = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wf7ck"]
 

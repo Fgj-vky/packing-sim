@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="2_f6fk4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_toqgl"]
-friction = 0.0
+friction = 0.1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lukbu"]
 

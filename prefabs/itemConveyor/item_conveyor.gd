@@ -26,11 +26,19 @@ func _process(delta):
         timer = time;
         SpawnItem();
 
+    var itemsToRemove = [];
     for item : RigidBody3D in itemsMoving:
         var targetPos = itemsMoving[item];
         if(item.position.x >= targetPos.x):
             item.linear_velocity = Vector3(0,0,0);
+            itemsToRemove.append(item);
             continue;
+        
+        item.linear_velocity = Vector3(conveyorSpeed, 0 ,0) + item.get_gravity();
+        pass
+
+    for item in itemsToRemove:
+        itemsMoving.erase(item);
         pass
     pass
 
@@ -41,5 +49,4 @@ func SpawnItem():
 
     itemsOnBelt.append(nextItem);
     itemsMoving[nextItem] = position - Vector3(itemsOnBelt.size() * itemSpacing,0,0);
-    nextItem.linear_velocity += Vector3(conveyorSpeed, 0 ,0);
     pass
