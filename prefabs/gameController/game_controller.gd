@@ -30,20 +30,34 @@ func createNewBox(boxScene: PackedScene):
 func closeCurrentBox():
 	if currentBoxObject == null:
 		return
+	if currentBoxObject.isBoxTooFull():
+		return;
+	if(!currentBoxObject.isOpen):
+		return;
+	
+	uiLayer.hideBoxFillDisplay()
 	currentBoxObject.close()
 
 
 func sendBoxAway():
 	if currentBoxObject == null:
 		return
+	if currentBoxObject.isBoxTooFull():
+		return;
 	if currentBoxObject.isOpen:
+		uiLayer.hideBoxFillDisplay()
 		await currentBoxObject.close()
 	var boxTween = get_tree().create_tween()
 	boxTween.tween_property(currentBoxObject, "global_position", boxExitLocation.global_position, 1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)	
 	await boxTween.finished
+
+	ProgressController.processBox(currentBoxObject);
+	
 	currentBoxObject.queue_free()
 	currentBoxObject = null
 	uiLayer.setCurrentBoxObject(null)
+
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
