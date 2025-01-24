@@ -44,7 +44,8 @@ func startDragging(dragableObject: DragableObject) -> void:
 	currentDragObject.linear_damp = 15
 	currentDragObject.angular_damp = 15
 	currentDragObject.dragging = true
-
+	Input.set_custom_mouse_cursor(load("res://textures/Hand_Drag2.png"))
+	
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT :
@@ -58,3 +59,4 @@ func _input(event):
 				currentDragObject.angular_damp = 0
 				currentDragObject.dragging = false
 				currentDragObject = null
+				Input.set_custom_mouse_cursor(load("res://textures/Hand2.png"))
