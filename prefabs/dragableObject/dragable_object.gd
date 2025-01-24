@@ -3,7 +3,7 @@ class_name DragableObject
 
 var highlighted: bool = false
 var dragging: bool = false
-var targetRotation = Vector3(0, 0, 0)
+var targetRotation = Quaternion.IDENTITY
 
 @onready var shadowDecal: Decal = $Decal
 
@@ -26,12 +26,10 @@ func _process(delta):
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if dragging:
 		# Tween rotation to target rotation
-		var currentRotation = self.global_transform.basis.get_euler()
-		var difference = targetRotation - currentRotation
-		var direction = difference.normalized()
-		var distance = difference.length()
-		var max_accelaration = 10
-		var acceleration = direction * min(max_accelaration, distance)
+		var currentRotation = self.quaternion
+		var newRotation = currentRotation.slerp(targetRotation, 0.1)
+		var rotationDiff = newRotation * currentRotation.inverse()
+		var acceleration = rotationDiff.get_euler() * 10
 		self.apply_torque_impulse(acceleration)
 	else:
 		# Limit velocity to max 5

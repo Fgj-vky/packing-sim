@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d3c0omgftm182"]
+
+[ext_resource type="FontFile" uid="uid://c4pgqicvroaa" path="res://SpaceGrotesk-VariableFont_wght.ttf" id="1_o5f23"]
+
+[resource]
+default_font = ExtResource("1_o5f23")
+default_font_size = 12
+Label/font_sizes/font_size = 28

@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3cqrd5mkwyjx"]
+[gd_scene load_steps=7 format=3 uid="uid://d3cqrd5mkwyjx"]
 
 [ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
 [ext_resource type="Texture2D" uid="uid://bpq1edqbkil88" path="res://textures/fillBarBG.png" id="2_pagcj"]
 [ext_resource type="Texture2D" uid="uid://bt6fn1nk0bprp" path="res://textures/fillBArFore.png" id="3_qongt"]
 [ext_resource type="Texture2D" uid="uid://d3qd1wjtt4sbp" path="res://textures/fillBarFill.png" id="4_iysu3"]
+
+[sub_resource type="Gradient" id="Gradient_saae1"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s0qfu"]
+gradient = SubResource("Gradient_saae1")
 
 [node name="UiLayer" type="Control"]
 layout_mode = 3
@@ -65,6 +71,17 @@ fill_mode = 3
 texture_under = ExtResource("2_pagcj")
 texture_over = ExtResource("3_qongt")
 texture_progress = ExtResource("4_iysu3")
+
+[node name="Fade" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_s0qfu")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]

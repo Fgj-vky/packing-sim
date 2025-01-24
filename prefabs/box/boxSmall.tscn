@@ -86,6 +86,9 @@ bones/2/rotation = Quaternion(-2.66925e-08, -1.9528e-07, -0.707107, 0.707107)
 bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
 bones/4/rotation = Quaternion(0.5, 0.5, -0.5, -0.5)
 
+[node name="box_s" parent="box_s_rig/Skeleton3D" index="0"]
+layers = 3
+
 [node name="BoxContainerArea" type="Area3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxContainerArea" index="0"]
