@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvrjesha1p2bt"]
+
+[ext_resource type="Script" path="res://prefabs/gameController/game_controller.gd" id="1_a8km2"]
+
+[node name="GameController" type="Node"]
+script = ExtResource("1_a8km2")

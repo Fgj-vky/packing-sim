@@ -1,4 +1,5 @@
 extends Node3D
+class_name Box
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer;
 @onready var containerArea: Area3D = $BoxContainerArea;
@@ -8,7 +9,6 @@ var itemsInTheBox: Array[DragableObject] = [];
 func _ready():
 	containerArea.body_entered.connect(onObjectEntered);
 	containerArea.body_exited.connect(onObjectRemoved);
-	open();
 	pass
 
 func _process(delta):
