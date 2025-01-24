@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5e23mmpnagn"]
+
+[ext_resource type="Script" path="res://prefabs/itemConveyor/item_conveyor.gd" id="1_cgf3e"]
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="2_f6fk4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lukbu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klcp5"]
+size = Vector3(6.18848, 0.0187988, 1.01855)
+
+[node name="ItemConveyor" type="Node3D"]
+script = ExtResource("1_cgf3e")
+items = Array[PackedScene]([ExtResource("2_f6fk4")])
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -3.05952, 1.03964, 0)
+
+[node name="ItemHolder" type="Node3D" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+
+[node name="Belt" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(3.07093, 0, 0, 0, 1, 0, 0, 0, 0.504735, 0, 0, 0)
+mesh = SubResource("PlaneMesh_lukbu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0225848, 0)
+shape = SubResource("BoxShape3D_klcp5")
