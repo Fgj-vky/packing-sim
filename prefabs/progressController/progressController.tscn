@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8kogesacil8x"]
+
+[ext_resource type="Script" path="res://prefabs/progressController/progress_controller.gd" id="1_s268i"]
+
+[node name="ProgressController" type="Node"]
+script = ExtResource("1_s268i")

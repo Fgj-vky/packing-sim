@@ -30,11 +30,9 @@ func updateBoxFillDisplay(amount: float):
 	pass
 
 func _on_close_button_pressed():
-	boxFillAmount.visible = false;
 	gameController.closeCurrentBox()
 
 func _on_send_button_pressed():
-	boxFillAmount.visible = false;
 	gameController.sendBoxAway()
 
 func _on_m_button_pressed():
@@ -42,3 +40,6 @@ func _on_m_button_pressed():
 
 func _on_s_button_pressed():
 	gameController.createNewSBox()
+
+func hideBoxFillDisplay():
+	boxFillAmount.visible = false;
