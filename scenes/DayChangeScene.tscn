@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://drof7ihpdslxa"]
+[gd_scene load_steps=4 format=3 uid="uid://drof7ihpdslxa"]
+
+[ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="1_qwqnc"]
+[ext_resource type="Script" path="res://scripts/stepReveal.gd" id="2_0luc8"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a3rih"]
 
 [node name="DayChangeScene" type="Control"]
 layout_mode = 3
@@ -7,3 +12,124 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qwqnc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.713726)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_a3rih")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -339.0
+offset_right = 302.0
+offset_bottom = 339.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Day 0"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_0luc8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Boxes Processed :"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "30"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Avarage Box Score:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "75 / 100"
+horizontal_alignment = 2
+
+[node name="Container" type="Container" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Money Earned:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$200"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Expenses:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$150"
+horizontal_alignment = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Savings:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$150"
+horizontal_alignment = 2
+
+[node name="Container2" type="Container" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Total:"
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$200"
+horizontal_alignment = 2
