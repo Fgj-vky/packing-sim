@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c45taotforghn"]
+[gd_scene load_steps=23 format=3 uid="uid://c45taotforghn"]
 
 [ext_resource type="PackedScene" uid="uid://cri7mr33ylgdj" path="res://models/box_m.glb" id="1_o2x1l"]
 [ext_resource type="Script" path="res://prefabs/box/box.gd" id="2_1h2tv"]
@@ -53,6 +53,22 @@ points = PackedVector3Array(-0.256265, 0.39011, -0.367187, 0.263881, 0.604266, -
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nqi3v"]
 points = PackedVector3Array(0.401546, 0.619563, 0.351795, 0.263881, 0.390132, -0.351795, 0.2792, 0.390132, -0.351795, 0.263881, 0.390132, 0.351795, 0.263881, 0.451336, -0.351795, 0.416865, 0.58895, -0.351795, 0.416865, 0.58895, 0.351795, 0.386256, 0.619563, -0.351795, 0.263881, 0.451336, 0.351795, 0.370967, 0.604245, 0.351795, 0.2792, 0.390132, 0.351795, 0.325099, 0.543064, -0.351795, 0.355647, 0.497222, 0.351795, 0.416865, 0.604245, -0.351795, 0.325099, 0.543064, 0.351795, 0.355647, 0.497222, -0.351795, 0.416865, 0.604245, 0.351795, 0.401546, 0.619563, -0.351795, 0.386256, 0.619563, 0.351795, 0.370967, 0.604245, -0.351795)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m7itu"]
+angle_min = -180.0
+angle_max = 180.0
+spread = 90.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61hm0"]
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mmmfl"]
+material = SubResource("StandardMaterial3D_61hm0")
+size = Vector2(1.5, 1.5)
+orientation = 1
 
 [node name="BoxMedium" instance=ExtResource("1_o2x1l")]
 transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 0)
@@ -121,3 +137,13 @@ shape = SubResource("ConvexPolygonShape3D_15ixa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxCollider" index="15"]
 shape = SubResource("ConvexPolygonShape3D_nqi3v")
+
+[node name="ClosingParticles" type="GPUParticles3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.444444, 0)
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_m7itu")
+draw_pass_1 = SubResource("QuadMesh_mmmfl")

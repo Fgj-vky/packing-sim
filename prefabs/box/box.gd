@@ -3,6 +3,7 @@ class_name Box
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer;
 @onready var containerArea: Area3D = $BoxContainerArea;
+@onready var closingParticles: GPUParticles3D = $ClosingParticles;
 
 var isOpen: bool = false;
 @export var containerSize: int = 3;
@@ -24,6 +25,12 @@ func open():
 
 func close():
 	animPlayer.play_backwards("Open");
+	if(itemsInTheBox.size() > 0):
+		await get_tree().create_timer(0.1).timeout
+		closingParticles.emitting = true;
+		for item in itemsInTheBox:
+			item.queue_free();
+			pass
 	await animPlayer.animation_finished;
 	isOpen = false;
 

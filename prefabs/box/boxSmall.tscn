@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cml5cbtxvn21c"]
+[gd_scene load_steps=25 format=3 uid="uid://cml5cbtxvn21c"]
 
 [ext_resource type="PackedScene" uid="uid://cav2yndbgwaek" path="res://models/box_s.glb" id="1_6nsel"]
 [ext_resource type="Script" path="res://prefabs/box/box.gd" id="2_yk7ld"]
@@ -59,6 +59,22 @@ points = PackedVector3Array(-0.239384, 0.332048, 0.25026, -0.16239, 0.187695, -0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gkyjp"]
 points = PackedVector3Array(0.251498, 0.322424, 0.25026, 0.145684, 0.18777, -0.25, 0.164894, 0.187695, -0.25026, 0.24187, 0.332048, -0.25026, 0.145629, 0.216594, 0.25026, 0.164894, 0.187695, 0.25026, 0.24187, 0.293554, -0.25026, 0.212999, 0.312801, -0.25026, 0.232243, 0.332048, 0.25026, 0.145629, 0.216594, -0.25026, 0.203372, 0.235841, 0.25026, 0.24187, 0.293554, 0.25026, 0.212999, 0.312801, 0.25026, 0.145684, 0.18777, 0.25, 0.251498, 0.312801, -0.25026, 0.174521, 0.197347, -0.25026, 0.232243, 0.332048, -0.25026, 0.203372, 0.235841, -0.25026, 0.24187, 0.332048, 0.25026, 0.251498, 0.322424, -0.25026, 0.251498, 0.312801, 0.25026, 0.174521, 0.197347, 0.25026)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_567t1"]
+angle_min = -180.0
+angle_max = 180.0
+spread = 90.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61hm0"]
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_5vl7i"]
+material = SubResource("StandardMaterial3D_61hm0")
+size = Vector2(1.5, 1.5)
+orientation = 1
 
 [node name="BoxS" instance=ExtResource("1_6nsel")]
 transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 0)
@@ -134,3 +150,13 @@ shape = SubResource("ConvexPolygonShape3D_xsg5h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoxCollider" index="17"]
 shape = SubResource("ConvexPolygonShape3D_gkyjp")
+
+[node name="ClosingParticles" type="GPUParticles3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.11758e-22, 0, 1, 0, 0.262748, 0)
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_567t1")
+draw_pass_1 = SubResource("QuadMesh_5vl7i")
