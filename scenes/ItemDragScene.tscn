@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=6 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
+[ext_resource type="PackedScene" uid="uid://c45taotforghn" path="res://prefabs/box/boxMedium.tscn" id="2_up013"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
 rough = true
@@ -35,3 +36,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.5336
 
 [node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
 transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, -0.190714, 0.05, -6.30688)
+
+[node name="BoxMedium" parent="." instance=ExtResource("2_up013")]
+transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 2.77322)
