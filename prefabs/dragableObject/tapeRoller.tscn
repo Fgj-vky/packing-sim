@@ -1,15 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx8gay6se77y1"]
+[gd_scene load_steps=6 format=3 uid="uid://cx8gay6se77y1"]
 
 [ext_resource type="PackedScene" uid="uid://con5blwk6qls1" path="res://prefabs/dragableObject/dragableTool.tscn" id="1_7ltas"]
+[ext_resource type="ArrayMesh" uid="uid://dybv6dhk04m5v" path="res://models/tapeRollerMesh.res" id="2_nsys7"]
+[ext_resource type="Script" path="res://prefabs/dragableObject/tape_roller.gd" id="2_s51pf"]
+[ext_resource type="Texture2D" uid="uid://df4s2lwb17gvc" path="res://models/melon_melon.png" id="3_pw1el"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_djk2k"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_up1wv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_klnlf"]
+size = Vector3(0.42, 1, 1)
 
 [node name="tapeRoller" instance=ExtResource("1_7ltas")]
+script = ExtResource("2_s51pf")
 
 [node name="CollisionShape3D" parent="." index="0"]
-shape = SubResource("CapsuleShape3D_djk2k")
+shape = SubResource("BoxShape3D_klnlf")
 
 [node name="MeshInstance3D" parent="." index="1"]
-mesh = SubResource("CapsuleMesh_up1wv")
+transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 0, 0, 0)
+mesh = ExtResource("2_nsys7")
+
+[node name="Decal2" type="Decal" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+size = Vector3(0.22, 10, 10)
+texture_albedo = ExtResource("3_pw1el")
+cull_mask = 1047554
