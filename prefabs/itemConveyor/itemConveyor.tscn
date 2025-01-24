@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5e23mmpnagn"]
 
 [ext_resource type="Script" path="res://prefabs/itemConveyor/item_conveyor.gd" id="1_cgf3e"]
-[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="2_f6fk4"]
+[ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="2_envns"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_toqgl"]
 friction = 0.1
@@ -14,7 +14,7 @@ size = Vector3(6.18848, 0.0187988, 1.01855)
 [node name="ItemConveyor" type="Node3D"]
 transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, 0, 0, 0)
 script = ExtResource("1_cgf3e")
-items = Array[PackedScene]([ExtResource("2_f6fk4")])
+items = Array[PackedScene]([ExtResource("2_envns")])
 itemSpacing = 0.1
 conveyorSpeed = 3.0
 

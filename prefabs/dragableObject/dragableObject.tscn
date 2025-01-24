@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wf7ck"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_42tu3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_053v4"]
 
@@ -15,7 +15,7 @@ physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("1_41c0n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_wf7ck")
+shape = SubResource("BoxShape3D_42tu3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_053v4")
