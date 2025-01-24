@@ -5,12 +5,19 @@ extends Node
 var currentBoxObject: Box = null
 
 
+var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
-func createNewMBox(): 
+func createNewSBox():
+	createNewBox(boxSPrefab)
+
+func createNewMBox():
+	createNewBox(boxMPrefab)
+
+func createNewBox(boxScene: PackedScene): 
 	if currentBoxObject != null:
 		return
-	var box = boxMPrefab.instantiate() as Node3D
+	var box = boxScene.instantiate() as Node3D
 	get_tree().get_root().add_child(box)
 	box.global_position = boxExitLocation.global_position
 	currentBoxObject = box
