@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cri7mr33ylgdj"
-path="res://.godot/imported/box_m.glb-3cd59bf16994c59a94a4248ff5fb9d36.scn"
+uid="uid://dl7ropnexixcj"
+path="res://.godot/imported/box_s_open.glb-d628b9199089b2beb17350a63ff93ddc.scn"
 
 [deps]
 
-source_file="res://assets/models/box_m.glb"
-dest_files=["res://.godot/imported/box_m.glb-3cd59bf16994c59a94a4248ff5fb9d36.scn"]
+source_file="res://models/box_s_open.glb"
+dest_files=["res://.godot/imported/box_s_open.glb-d628b9199089b2beb17350a63ff93ddc.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="BoxM"
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

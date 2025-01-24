@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6aggk2m2x2m8"
-path="res://.godot/imported/book_book.png-c4dc8ca49bfbe7ee3b4067e74af5aad5.ctex"
+path="res://.godot/imported/book_book.png-45880f3e84a77582e7e811d08a15b5aa.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/book_book.png"
-dest_files=["res://.godot/imported/book_book.png-c4dc8ca49bfbe7ee3b4067e74af5aad5.ctex"]
+source_file="res://models/book_book.png"
+dest_files=["res://.godot/imported/book_book.png-45880f3e84a77582e7e811d08a15b5aa.ctex"]
 
 [params]
 
