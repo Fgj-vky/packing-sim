@@ -82,67 +82,67 @@ bones/4/rotation = Quaternion(-0.212631, 0.67438, 0.212631, -0.67438)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0953676, 0.000793487)
 shape = SubResource("BoxShape3D_slsd8")
 
-[node name="BoxFloor" type="RigidBody3D" parent="." index="3"]
+[node name="BoxCollider" type="RigidBody3D" parent="." index="3"]
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
 
-[node name="CollisionShape3D20" type="CollisionShape3D" parent="BoxFloor" index="0"]
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="BoxCollider" index="0"]
 shape = SubResource("ConvexPolygonShape3D_bnjtj")
 
-[node name="CollisionShape3D19" type="CollisionShape3D" parent="BoxFloor" index="1"]
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="BoxCollider" index="1"]
 shape = SubResource("ConvexPolygonShape3D_og073")
 
-[node name="CollisionShape3D18" type="CollisionShape3D" parent="BoxFloor" index="2"]
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="BoxCollider" index="2"]
 shape = SubResource("ConvexPolygonShape3D_1kw01")
 
-[node name="CollisionShape3D17" type="CollisionShape3D" parent="BoxFloor" index="3"]
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="BoxCollider" index="3"]
 shape = SubResource("ConvexPolygonShape3D_56gl5")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="BoxFloor" index="4"]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="BoxCollider" index="4"]
 shape = SubResource("ConvexPolygonShape3D_jqvam")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="BoxFloor" index="5"]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="BoxCollider" index="5"]
 shape = SubResource("ConvexPolygonShape3D_hlwuj")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="BoxFloor" index="6"]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="BoxCollider" index="6"]
 shape = SubResource("ConvexPolygonShape3D_32dpm")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="BoxFloor" index="7"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="BoxCollider" index="7"]
 shape = SubResource("ConvexPolygonShape3D_7cnjk")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="BoxFloor" index="8"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="BoxCollider" index="8"]
 shape = SubResource("ConvexPolygonShape3D_2lds4")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="BoxFloor" index="9"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="BoxCollider" index="9"]
 shape = SubResource("ConvexPolygonShape3D_1vji5")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="BoxFloor" index="10"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="BoxCollider" index="10"]
 shape = SubResource("ConvexPolygonShape3D_a5qye")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="BoxFloor" index="11"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="BoxCollider" index="11"]
 shape = SubResource("ConvexPolygonShape3D_plo2u")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="BoxFloor" index="12"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="BoxCollider" index="12"]
 shape = SubResource("ConvexPolygonShape3D_n8x0k")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="BoxFloor" index="13"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="BoxCollider" index="13"]
 shape = SubResource("ConvexPolygonShape3D_sq2rn")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="BoxFloor" index="14"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="BoxCollider" index="14"]
 shape = SubResource("ConvexPolygonShape3D_vl6s6")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="BoxFloor" index="15"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="BoxCollider" index="15"]
 shape = SubResource("ConvexPolygonShape3D_cux6k")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="BoxFloor" index="16"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BoxCollider" index="16"]
 shape = SubResource("ConvexPolygonShape3D_1u12i")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="BoxFloor" index="17"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BoxCollider" index="17"]
 shape = SubResource("ConvexPolygonShape3D_twqer")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="BoxFloor" index="18"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BoxCollider" index="18"]
 shape = SubResource("ConvexPolygonShape3D_xsg5h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxFloor" index="19"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxCollider" index="19"]
 shape = SubResource("ConvexPolygonShape3D_gkyjp")
