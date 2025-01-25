@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://donayaht088q6"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_4uyc3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tix3p"]
+friction = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ny4n6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_15t6n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j0h3g"]
+friction = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_emojm"]
+size = Vector3(0.633057, 0.200684, 0.804443)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wb7je"]
+
+[node name="hingedBubbleWrap" instance=ExtResource("1_4uyc3")]
+mass = 0.25
+linear_damp = 100.0
+
+[node name="leftHinge" type="HingeJoint3D" parent="." index="0"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.583319, 0, 0)
+node_a = NodePath("..")
+node_b = NodePath("RigidBody3D")
+exclude_nodes_from_collision = false
+params/bias = 0.72
+angular_limit/enable = true
+angular_limit/upper = 0.785398
+angular_limit/lower = -0.785398
+angular_limit/bias = 0.8
+
+[node name="RigidBody3D" type="RigidBody3D" parent="leftHinge" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.525943, 0, 0)
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_tix3p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="leftHinge/RigidBody3D" index="0"]
+shape = SubResource("CapsuleShape3D_ny4n6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="leftHinge/RigidBody3D" index="1"]
+mesh = SubResource("CapsuleMesh_15t6n")
+
+[node name="rightHinge" type="HingeJoint3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.527182, 0, 0)
+node_a = NodePath("..")
+node_b = NodePath("RigidBody3D")
+exclude_nodes_from_collision = false
+params/bias = 0.72
+angular_limit/enable = true
+angular_limit/upper = 0.785398
+angular_limit/lower = -0.785398
+angular_limit/bias = 0.8
+
+[node name="RigidBody3D" type="RigidBody3D" parent="rightHinge" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.525943, 0, 0)
+mass = 0.25
+physics_material_override = SubResource("PhysicsMaterial_j0h3g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rightHinge/RigidBody3D" index="0"]
+shape = SubResource("CapsuleShape3D_ny4n6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rightHinge/RigidBody3D" index="1"]
+mesh = SubResource("CapsuleMesh_15t6n")
+
+[node name="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108154, 0)
+shape = SubResource("BoxShape3D_emojm")
+
+[node name="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_wb7je")

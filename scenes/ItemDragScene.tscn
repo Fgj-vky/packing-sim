@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=10 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
-[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://donayaht088q6" path="res://prefabs/dragableObject/variations/hingedBubbleWrap.tscn" id="6_h6dpg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
-rough = true
+friction = 0.1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wvca3"]
 size = Vector2(30, 10)
@@ -59,3 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84153, 0, 0)
 
 [node name="tapeRoller" parent="." instance=ExtResource("5_7xu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77912, 0.0500007, -0.0437994)
+
+[node name="DragableObject" parent="." instance=ExtResource("6_h6dpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825961, 0.05, 1.68612)
