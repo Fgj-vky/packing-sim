@@ -7,6 +7,7 @@
 size = Vector3(0.633057, 0.200684, 0.804443)
 
 [node name="DragableObject" instance=ExtResource("1_mvcci")]
+itemName = "book"
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108154, 0)

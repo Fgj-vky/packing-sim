@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3cqrd5mkwyjx"]
+[gd_scene load_steps=8 format=3 uid="uid://d3cqrd5mkwyjx"]
 
+[ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="1_65tvp"]
 [ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
 [ext_resource type="Texture2D" uid="uid://bpq1edqbkil88" path="res://textures/fillBarBG.png" id="2_pagcj"]
 [ext_resource type="Texture2D" uid="uid://bt6fn1nk0bprp" path="res://textures/fillBArFore.png" id="3_qongt"]
@@ -18,54 +19,122 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 mouse_filter = 2
+theme = ExtResource("1_65tvp")
 script = ExtResource("1_ixsxp")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_right = 322.0
-offset_bottom = 144.0
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -290.0
+offset_top = 2.0
+offset_bottom = 253.0
+grow_horizontal = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer"]
 layout_mode = 2
 
-[node name="lButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Current Order:"
+
+[node name="HSeparator" type="HSeparator" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="orderLabels" type="VBoxContainer" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Panel2/MarginContainer/VBoxContainer/orderLabels"]
+layout_mode = 2
+text = "- Item 1"
+
+[node name="Label2" type="Label" parent="Panel2/MarginContainer/VBoxContainer/orderLabels"]
+layout_mode = 2
+text = "- Item 2"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.001
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -315.0
+offset_right = 749.08
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="lButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 disabled = true
 text = "Create large Box"
 
-[node name="mButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="mButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_65tvp")
 text = "Create medium Box"
 
-[node name="sButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="sButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Create small Box"
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="sendButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="sendButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Send current box Away"
 
-[node name="closeButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="closeButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Close Box"
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Current box: null"
 
-[node name="BoxFillBar" type="TextureProgressBar" parent="HBoxContainer"]
+[node name="BoxFillBar" type="TextureProgressBar" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_vertical = 3
 max_value = 220.0
 fill_mode = 3
 texture_under = ExtResource("2_pagcj")
@@ -83,7 +152,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_s0qfu")
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/sendButton" to="." method="_on_send_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/sendButton" to="." method="_on_send_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
