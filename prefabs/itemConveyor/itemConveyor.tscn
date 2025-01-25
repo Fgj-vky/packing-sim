@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5e23mmpnagn"]
 
 [ext_resource type="Script" path="res://prefabs/itemConveyor/item_conveyor.gd" id="1_cgf3e"]
-[ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="2_envns"]
+[ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/items/book.tscn" id="2_envns"]
 [ext_resource type="ArrayMesh" uid="uid://bfo0onyyyey7b" path="res://models/conveyor/conveyorMesh.res" id="3_k1kyd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_toqgl"]

@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/vase.glb-6644d9074725167805fda1d2d6efb7ca.scn
 nodes/root_type=""
 nodes/root_name="Vase"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=4.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -36,6 +36,17 @@ _subresources={
 "vase": {
 "use_external/enabled": true,
 "use_external/path": "res://materials/vase.tres"
+}
+},
+"meshes": {
+"vase_vase": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://models/vase/vaseMesh.res"
 }
 }
 }

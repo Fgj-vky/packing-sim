@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=15 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cml5cbtxvn21c" path="res://prefabs/box/boxSmall.tscn" id="6_h5wdt"]
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
+friction = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jya2"]
 size = Vector3(8.66577, 0.521118, 4.66174)
@@ -48,11 +51,13 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 
 [node name="Start" parent="." instance=ExtResource("7_7ojjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63253, -1.91703, -9.48864)
+physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("4_jyyct")
 itemName = "Start"
 
 [node name="End" parent="." instance=ExtResource("7_7ojjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -9.48864)
+physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("4_jyyct")
 itemName = "End"
 
