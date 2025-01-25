@@ -66,6 +66,7 @@ func onRemoved():
 func pickUp():
 	dragging = true;
 	picked_up.emit();
+	constant_force = Vector3();
 	pass
 func release():
 	dragging = false;

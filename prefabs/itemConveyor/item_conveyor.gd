@@ -31,7 +31,7 @@ func _physics_process(delta):
 			continue;
 
 		var item = node as DragableObject;
-		item.linear_velocity = Vector3(conveyorSpeed, 0 ,0) + item.get_gravity();
+		#item.move_and_collide(Vector3(conveyorSpeed * delta, 0 ,0));
 		pass
 	
 	# Remove items that are being dragged
@@ -44,4 +44,6 @@ func SpawnItem():
 	itemHolder.add_child(nextItem);
 
 	itemsOnBelt.append(nextItem);
+	nextItem.linear_velocity = Vector3(conveyorSpeed, 0 ,0)
+	nextItem.constant_force = Vector3(conveyorSpeed, 0 ,0) * 0.25;
 	pass
