@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://c45taotforghn"]
 
-[ext_resource type="PackedScene" uid="uid://cri7mr33ylgdj" path="res://models/box_m.glb" id="1_o2x1l"]
+[ext_resource type="PackedScene" uid="uid://cri7mr33ylgdj" path="res://models/boxMedium/boxMedium.glb" id="1_o2x1l"]
 [ext_resource type="Script" path="res://prefabs/box/box.gd" id="2_1h2tv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fs3y5"]

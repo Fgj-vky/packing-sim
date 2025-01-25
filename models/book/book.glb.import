@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dl7ropnexixcj"
-path="res://.godot/imported/box_s_open.glb-d628b9199089b2beb17350a63ff93ddc.scn"
+uid="uid://d3m5qhqmapuuy"
+path="res://.godot/imported/book.glb-0a267a84d83eb015e4fdd47616e936f3.scn"
 
 [deps]
 
-source_file="res://models/box_s_open.glb"
-dest_files=["res://.godot/imported/box_s_open.glb-d628b9199089b2beb17350a63ff93ddc.scn"]
+source_file="res://models/book/book.glb"
+dest_files=["res://.godot/imported/book.glb-0a267a84d83eb015e4fdd47616e936f3.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Book"
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=4.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -31,6 +31,18 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"meshes": {
+"book_book": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://models/book/bookMesh.res"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

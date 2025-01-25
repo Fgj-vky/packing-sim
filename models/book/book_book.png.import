@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cylfkuxutxxhr"
-path="res://.godot/imported/bubblewrap_bubble.png-27337a0696893269eefc682646cdc8f4.ctex"
+uid="uid://b6aggk2m2x2m8"
+path="res://.godot/imported/book_book.png-4c0f33eda973361150be79e2931ad544.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "c10d15310b2a0da4cfc258d31f24e632"
+"md5": "db37b6e76663cb3edba209b4dcd0497a"
 }
 
 [deps]
 
-source_file="res://models/bubblewrap_bubble.png"
-dest_files=["res://.godot/imported/bubblewrap_bubble.png-27337a0696893269eefc682646cdc8f4.ctex"]
+source_file="res://models/book/book_book.png"
+dest_files=["res://.godot/imported/book_book.png-4c0f33eda973361150be79e2931ad544.ctex"]
 
 [params]
 

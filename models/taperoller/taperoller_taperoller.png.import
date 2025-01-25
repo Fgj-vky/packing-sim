@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wj6inkpbtvit"
-path="res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.ctex"
+uid="uid://cg83wx4ig4ual"
+path="res://.godot/imported/taperoller_taperoller.png-fd82eaad2014a383b7624f77e277ac28.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/taperoller_taperoller.png"
-dest_files=["res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.ctex"]
+source_file="res://models/taperoller/taperoller_taperoller.png"
+dest_files=["res://.godot/imported/taperoller_taperoller.png-fd82eaad2014a383b7624f77e277ac28.ctex"]
 
 [params]
 

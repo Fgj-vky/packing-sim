@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df4s2lwb17gvc"
-path="res://.godot/imported/melon_melon.png-2c68cfb0d2d6719833cab15f1f6e2930.ctex"
+uid="uid://xytg2jyf20h3"
+path="res://.godot/imported/box_s.png-b9f52acf94eb2ead01ae72472107728f.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "7bbf3ab552365cc079e2456716508624"
 }
 
 [deps]
 
-source_file="res://models/melon_melon.png"
-dest_files=["res://.godot/imported/melon_melon.png-2c68cfb0d2d6719833cab15f1f6e2930.ctex"]
+source_file="res://materials/box_s.png"
+dest_files=["res://.godot/imported/box_s.png-b9f52acf94eb2ead01ae72472107728f.ctex"]
 
 [params]
 

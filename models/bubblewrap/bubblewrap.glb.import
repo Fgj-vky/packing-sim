@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3m5qhqmapuuy"
-path="res://.godot/imported/book.glb-bf485d73f71e0a7d627bd15c6b61b2ab.scn"
+uid="uid://bhevp06hndxxn"
+path="res://.godot/imported/bubblewrap.glb-b5e94714a3a553a19b8fb555bbb09af7.scn"
 
 [deps]
 
-source_file="res://models/book.glb"
-dest_files=["res://.godot/imported/book.glb-bf485d73f71e0a7d627bd15c6b61b2ab.scn"]
+source_file="res://models/bubblewrap/bubblewrap.glb"
+dest_files=["res://.godot/imported/bubblewrap.glb-b5e94714a3a553a19b8fb555bbb09af7.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Book"
+nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=4.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -33,14 +33,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"book_book": {
+"bubblewrap_Plane_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://models/bookMesh.res"
+"save_to_file/path": "res://models/bubblewrap/bubbleWrapModel.res"
 }
 }
 }

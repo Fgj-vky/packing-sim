@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cri7mr33ylgdj"
-path="res://.godot/imported/box_m.glb-6d2f82e0acd1c1333812907253efea88.scn"
+path="res://.godot/imported/boxMedium.glb-e9067e6eecc389909e60d30930f23a16.scn"
 
 [deps]
 
-source_file="res://models/box_m.glb"
-dest_files=["res://.godot/imported/box_m.glb-6d2f82e0acd1c1333812907253efea88.scn"]
+source_file="res://models/boxMedium/boxMedium.glb"
+dest_files=["res://.godot/imported/boxMedium.glb-e9067e6eecc389909e60d30930f23a16.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="BoxM"
+nodes/root_name="BoxMedium"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -1835,4 +1835,4 @@ _subresources={
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=0
