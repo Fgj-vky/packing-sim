@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpp5pmwx46yby"]
+
+[ext_resource type="AudioStream" uid="uid://d3ucd7q73chx7" path="res://sounds/glitchstairs.wav" id="1_xgjrf"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_xgjrf")
+volume_db = -25.0
+autoplay = true
