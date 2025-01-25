@@ -3,7 +3,7 @@ extends Node
 var dragging: bool = false
 var currentDragObject: DragableObject = null
 var highlightedObject: DragableObject = null
-var distanceFromScreen = 3
+var distanceFromScreen = 10
 
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
 var grabSound = preload("res://sounds/grab.wav")
@@ -20,6 +20,12 @@ func _process(delta):
 		var mousePos = get_viewport().get_mouse_position()
 		var ray = get_viewport().get_camera_3d().project_ray_origin(mousePos)
 		var target = ray + get_viewport().get_camera_3d().project_ray_normal(mousePos) * distanceFromScreen
+		# Adjust target to move further away the further the point is from the center of the screen
+		var center_screen_pos = Vector2(get_viewport().size.x / 2, get_viewport().size.y / 2)
+		var center_ray_origin = get_viewport().get_camera_3d().project_ray_origin(center_screen_pos)
+		var offset = (target - center_ray_origin).normalized() * 2
+		offset.y = 0  # Ensure the height (y-axis) remains unchanged
+		target += offset
 		var difference = target - currentDragObject.global_transform.origin
 		var direction = difference.normalized()
 		var distance = difference.length()

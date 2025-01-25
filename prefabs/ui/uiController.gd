@@ -2,9 +2,11 @@ extends Control
 class_name UiController
 
 @export var gameController: GameController
-@onready var currentBoxLabel: Label = $HBoxContainer/Label
-@onready var boxFillAmount: TextureProgressBar = $HBoxContainer/BoxFillBar
+@onready var currentBoxLabel: Label = $Panel/MarginContainer/HBoxContainer/VBoxContainer2/Label
+@onready var boxFillAmount: TextureProgressBar = $Panel/MarginContainer/HBoxContainer/VBoxContainer2/BoxFillBar
 @onready var fade: TextureRect = $Fade;
+@onready var orderList: VBoxContainer = $Panel2/MarginContainer/VBoxContainer/orderLabels
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +18,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # func _process(delta):
 # 	pass
+
+func updateOrderDisplay(orders: Array[String]):
+	for n in orderList.get_children():
+		orderList.remove_child(n)
+		n.queue_free()
+	for order in orders:
+		var label = Label.new()
+		label.text = "- " + order.capitalize()
+		orderList.add_child(label)
+
 
 func setCurrentBoxObject(box: Node3D):
 	if box == null:

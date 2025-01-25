@@ -12,8 +12,18 @@ func advanceDay():
     boxScore = 0;
     boxes = 0;
 
-func processBox(box: Box):
+func processBox(box: Box, order: Array[String]):
     print(box.fillAmount)
+    print("Box contains: " + String(", ").join(box.itemNames))
+
+    var requiredItems = order.size();
+    var correctItems = 0;
+    for item in order:
+        if box.itemNames.find(item) >= 0:
+            box.itemNames.erase(item);
+            correctItems += 1;
+    print("Correct items: " + str(correctItems) + "/" + str(requiredItems));
+
     boxes += 1;
     if(box.fillAmount > 0):
         boxScore += box.fillPrecentage();

@@ -14,6 +14,21 @@ var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 @onready var dayTimer: Timer = $DayTimer;
 @export_file var dayChangeScene: String;
 
+
+var currentOrder: Array[String] = []
+var availableItems = ["melon", "book"]
+
+func createNewOrder():
+	if currentOrder.size() > 0:
+		return
+	var orderSize = randi() % 3 + 1
+	for i in range(orderSize):
+		var item = availableItems[randi() % availableItems.size()]
+		currentOrder.append(item)
+	uiLayer.updateOrderDisplay(currentOrder)
+	
+	
+
 func createNewSBox():
 	createNewBox(boxSPrefab)
 
@@ -57,11 +72,13 @@ func sendBoxAway():
 	boxTween.tween_property(currentBoxObject, "global_position", boxExitLocation.global_position, 0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)	
 	await boxTween.finished
 
-	ProgressController.processBox(currentBoxObject);
+	ProgressController.processBox(currentBoxObject, currentOrder);
 	
 	currentBoxObject.queue_free()
 	currentBoxObject = null
 	uiLayer.setCurrentBoxObject(null)
+	currentOrder = []
+	createNewOrder()
 
 func endDay():
 	await uiLayer.fadeToBlack();
@@ -71,6 +88,7 @@ func endDay():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dayTimer.timeout.connect(endDay);
+	createNewOrder()
 	pass # Replace with function body.
 
 
