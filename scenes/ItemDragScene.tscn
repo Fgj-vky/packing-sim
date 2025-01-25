@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="3_38hv7"]
-[ext_resource type="PackedScene" uid="uid://dk0160t034gnc" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
-[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://ce2oagjorwmtn" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
 [ext_resource type="PackedScene" uid="uid://4xadrga8nj80" path="res://prefabs/dragableObject/stamp.tscn" id="8_rbu15"]
 [ext_resource type="PackedScene" uid="uid://dhy1gf3tdyotc" path="res://prefabs/clock/clock.tscn" id="9_y6rwl"]
 [ext_resource type="PackedScene" uid="uid://c5fkeeqlecjm0" path="res://prefabs/printer/printer.tscn" id="10_4qvj0"]
@@ -44,6 +44,8 @@ fov = 45.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.810256, -0.444944, 0.381457, 0, 1.40698, 0)
+visible = false
+sky_mode = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.53366, 0.622478)
@@ -88,5 +90,19 @@ gameController = NodePath("../GameController")
 
 [node name="Lever" parent="." instance=ExtResource("12_5vplb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3777, 0.0499992, 2.96828)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.438353, 0.539433, -0.718929, 0.810369, 0.108786, 0.575732, 0.388778, -0.834972, -0.389453, -12.8413, 6.66782, -6.52792)
+light_energy = 3.16
+shadow_enabled = true
+spot_range = 41.6735
+spot_angle = 63.653
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.204428, -0.756234, 0.621546, -0.917116, 0.0740106, 0.39169, -0.342211, -0.650102, -0.678425, 8.33285, 6.66782, -4.81123)
+light_energy = 3.16
+shadow_enabled = true
+spot_range = 41.6735
+spot_angle = 70.8617
 
 [connection signal="onLeverPulled" from="Lever" to="BubbleWrapStation" method="_on_lever_on_lever_pulled"]

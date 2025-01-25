@@ -10,7 +10,7 @@ friction = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_053v4"]
 
-[node name="DragableObject" type="RigidBody3D"]
+[node name="DragableObject2" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("1_41c0n")
 
