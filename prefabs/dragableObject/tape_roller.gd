@@ -1,6 +1,12 @@
 extends DragableTool
 
 @onready var tapeDecal: Decal = $Decal2
+@onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var tapeSounds: Array[AudioStream] = [
+	preload("res://sounds/tape1.wav"),
+	preload("res://sounds/tape2.wav"),
+	preload("res://sounds/tape3.wav"),
+]
 
 func useTool():
 	if dragging:
@@ -41,3 +47,10 @@ func useTool():
 
 
 			self.apply_impulse(impulse)
+			playTapeSound()
+
+func playTapeSound():
+	var randomAudio = tapeSounds[randi() % tapeSounds.size()]
+	audioPlayer.stream = randomAudio
+	audioPlayer.play()
+

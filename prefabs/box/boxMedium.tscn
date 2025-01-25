@@ -151,3 +151,5 @@ one_shot = true
 transform_align = 1
 process_material = SubResource("ParticleProcessMaterial_m7itu")
 draw_pass_1 = SubResource("QuadMesh_mmmfl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5"]

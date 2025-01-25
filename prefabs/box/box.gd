@@ -5,6 +5,10 @@ class_name Box
 @onready var containerArea: Area3D = $BoxContainerArea;
 @onready var closingParticles: GPUParticles3D = $ClosingParticles;
 
+@onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var openSound = preload("res://sounds/boxOpen.wav")
+var closeSound = preload("res://sounds/boxClose.wav")
+
 var isOpen: bool = false;
 @export var containerSize: int = 3;
 
@@ -23,11 +27,15 @@ func _process(delta):
 
 func open():
 	animPlayer.play("Open");
+	audioPlayer.stream = openSound;
+	audioPlayer.play();
 	isOpen = true;
 
 func close():
 	var fill = fillAmount;
 	animPlayer.play_backwards("Open");
+	audioPlayer.stream = closeSound;
+	audioPlayer.play();
 	if(itemsInTheBox.size() > 0):
 		await get_tree().create_timer(0.1).timeout
 		closingParticles.emitting = true;

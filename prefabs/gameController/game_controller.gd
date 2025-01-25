@@ -5,6 +5,8 @@ class_name GameController
 @export var boxExitLocation: Node3D
 @export var uiLayer: UiController
 var currentBoxObject: Box = null
+@onready var audioPlayer = $AudioStreamPlayer3D
+var boxSendAudio = preload("res://sounds/send.wav")
 
 var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
@@ -50,7 +52,9 @@ func sendBoxAway():
 		uiLayer.hideBoxFillDisplay()
 		await currentBoxObject.close()
 	var boxTween = get_tree().create_tween()
-	boxTween.tween_property(currentBoxObject, "global_position", boxExitLocation.global_position, 1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)	
+	audioPlayer.stream = boxSendAudio
+	audioPlayer.play()
+	boxTween.tween_property(currentBoxObject, "global_position", boxExitLocation.global_position, 0.2).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)	
 	await boxTween.finished
 
 	ProgressController.processBox(currentBoxObject);

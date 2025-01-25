@@ -5,6 +5,10 @@ var currentDragObject: DragableObject = null
 var highlightedObject: DragableObject = null
 var distanceFromScreen = 3
 
+@onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+var grabSound = preload("res://sounds/grab.wav")
+var dropSound = preload("res://sounds/drop.wav")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -45,6 +49,8 @@ func startDragging(dragableObject: DragableObject) -> void:
 	currentDragObject.angular_damp = 15
 	currentDragObject.pickUp();
 	Input.set_custom_mouse_cursor(load("res://textures/Hand_Drag2.png"))
+	audioPlayer.stream = grabSound
+	audioPlayer.play()
 	
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -60,3 +66,5 @@ func _input(event):
 				currentDragObject.release();
 				currentDragObject = null
 				Input.set_custom_mouse_cursor(load("res://textures/Hand2.png"))
+				audioPlayer.stream = dropSound
+				audioPlayer.play()
