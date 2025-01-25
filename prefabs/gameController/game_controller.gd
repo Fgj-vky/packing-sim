@@ -85,6 +85,7 @@ func sendBoxAway():
 	createNewOrder()
 
 func endDay():
+	DragControllerNode.inGame = false;
 	await uiLayer.fadeToBlack();
 	get_tree().change_scene_to_file(dayChangeScene);
 	pass
@@ -94,6 +95,7 @@ func _ready():
 	dayTimer.timeout.connect(endDay);
 	await get_tree().create_timer(1.0).timeout
 	createNewOrder()
+	DragControllerNode.inGame = true;
 	pass # Replace with function body.
 
 

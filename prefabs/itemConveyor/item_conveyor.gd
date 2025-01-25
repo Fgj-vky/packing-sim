@@ -12,18 +12,18 @@ var itemsMoving = {};
 @export var conveyorSpeed: float = 1;
 
 var timer: float;
-var time = 2;
+@export var spawnRate = 2;
 
 func _ready():
-	timer = time;
+	timer = spawnRate;
 	SpawnItem();
 	pass
 
-func _process(delta):
+func _physics_process(delta):
 	timer -= delta;
 
 	if(timer < 0):
-		timer = time;
+		timer = spawnRate;
 		SpawnItem();
 
 	for node in itemsOnBelt:
