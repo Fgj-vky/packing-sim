@@ -18,6 +18,9 @@ var itemNames: Array[String] = [];
 var receipt: Receipt = null
 var hasReceipt: bool = false
 
+var tapeCount = 0
+var stampCount = 0
+
 signal fill_amount_changed(new_value:float);
 
 func _ready():

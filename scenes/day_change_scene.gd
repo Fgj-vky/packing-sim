@@ -15,9 +15,9 @@ func _ready():
 
 	boxesLabel.text = str(ProgressController.boxes);
 	if(ProgressController.boxes == 0):
-		boxScroreLabel.text = "0/100";
+		boxScroreLabel.text = "0";
 	else:
-		boxScroreLabel.text = str(max(ProgressController.boxScore / ProgressController.boxes * 100, 0) as int) + "/100";
+		boxScroreLabel.text = str(max(ProgressController.boxScore / ProgressController.boxes, 0) as int);
 	moneyEarnedLable.text = str(moneyEarned);
 	expensesLabel.text = str(ProgressController.dailyExpenses);
 	savingsLabel.text = str(ProgressController.money);

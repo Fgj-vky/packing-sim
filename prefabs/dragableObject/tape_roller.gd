@@ -56,6 +56,7 @@ func useTool():
 
 			self.apply_impulse(impulse)
 			playTapeSound()
+			gameController.currentBoxObject.tapeCount += 1
 
 func playTapeSound():
 	var randomAudio = tapeSounds[randi() % tapeSounds.size()]

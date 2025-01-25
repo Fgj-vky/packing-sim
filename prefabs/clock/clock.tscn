@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://prefabs/clock/clock.gd" id="1_8s6c6"]
 [ext_resource type="ArrayMesh" uid="uid://nid200brlhi6" path="res://models/clock/clockMesh.res" id="2_lvcsy"]
-[ext_resource type="ArrayMesh" uid="uid://c28hrkibeogfj" path="res://models/clock/clockHandMesh.res" id="3_ua7an"]
+[ext_resource type="ArrayMesh" uid="uid://dak2a5i8sil1u" path="res://models/clock/clockHandMesh.res" id="3_ua7an"]
 [ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="4_5dqja"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jej7f"]

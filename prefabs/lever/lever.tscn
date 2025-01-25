@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7nqiv6f5qxaq"]
+
+[ext_resource type="Script" path="res://prefabs/lever/lever.gd" id="1_5bs7e"]
+[ext_resource type="PackedScene" uid="uid://n1nijxawtqim" path="res://prefabs/dragableObject/variations/lever_handle.tscn" id="1_6qyx1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5orbs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67g7t"]
+
+[node name="Lever" type="Node3D"]
+script = ExtResource("1_5bs7e")
+
+[node name="Lever Handle" parent="." instance=ExtResource("1_6qyx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0510938, 2.39452, -0.111331)
+mass = 0.5
+
+[node name="Base" type="RigidBody3D" parent="."]
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Base"]
+mesh = SubResource("BoxMesh_5orbs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base"]
+shape = SubResource("BoxShape3D_67g7t")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+node_a = NodePath("../Base")
+node_b = NodePath("../Lever Handle")
+params/bias = 0.99
+angular_limit/enable = true
+angular_limit/upper = 0.785398
+angular_limit/lower = 0.0
+motor/enable = true
+motor/target_velocity = -17.4533
+motor/max_impulse = 0.02

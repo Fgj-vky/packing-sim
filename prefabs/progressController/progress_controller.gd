@@ -24,10 +24,31 @@ func processBox(box: Box, order: Array[String]):
             correctItems += 1;
     print("Correct items: " + str(correctItems) + "/" + str(requiredItems));
     print("Box has receipt: " + str(box.hasReceipt));
+    print("Box stamps: " + str(box.stampCount));
+    print("Box tapes: " + str(box.tapeCount));
 
     boxes += 1;
-    if(box.fillAmount > 0):
-        boxScore += box.fillPrecentage();
+
+    var score = 0
+    if box.hasReceipt:
+        score += 2;
     else:
-        boxScore -= 1;
-    pass
+        score -= 1;
+
+    if box.stampCount >= 2:
+        score += 2;
+    else:
+        score -= 1;
+
+    if box.tapeCount >= 4:
+        score += 2;
+    else:
+        score -= 1;
+
+    if correctItems == requiredItems:
+        score += 4;
+    else:
+        score -= 2;
+
+    boxScore += score;
+    print("Score: " + str(score));

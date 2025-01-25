@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DragControllerNode="*res://prefabs/dragController/dragController.tscn"
 ProgressController="*res://prefabs/progressController/progressController.tscn"
+MusicPlayer="*res://prefabs/musicPlayer/musicPlayer.tscn"
 
 [display]
 
