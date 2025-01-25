@@ -14,7 +14,10 @@ func _ready():
 	var total = ProgressController.money + moneyEarned - ProgressController.dailyExpenses;
 
 	boxesLabel.text = str(ProgressController.boxes);
-	boxScroreLabel.text = str(max(ProgressController.boxScore / ProgressController.boxes * 100, 0) as int) + "/100";
+	if(ProgressController.boxes == 0):
+		boxScroreLabel.text = "0/100";
+	else:
+		boxScroreLabel.text = str(max(ProgressController.boxScore / ProgressController.boxes * 100, 0) as int) + "/100";
 	moneyEarnedLable.text = str(moneyEarned);
 	expensesLabel.text = str(ProgressController.dailyExpenses);
 	savingsLabel.text = str(ProgressController.money);
