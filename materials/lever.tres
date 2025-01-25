@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdinwu4whienh"]
+
+[ext_resource type="Texture2D" uid="uid://dbhttlvoo5v8g" path="res://materials/lever.png" id="1_vqi5p"]
+
+[resource]
+albedo_texture = ExtResource("1_vqi5p")
+texture_filter = 0
