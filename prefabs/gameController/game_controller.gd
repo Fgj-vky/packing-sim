@@ -31,7 +31,15 @@ func createNewOrder():
 	uiLayer.updateOrderDisplay(currentOrder)
 	printer.print()
 	
-	
+func _input(event):
+	if (event.is_action_pressed("create_box_small")):
+		createNewSBox()
+	elif (event.is_action_pressed("create_box_medium")):
+		createNewMBox()
+	elif (event.is_action_pressed("send_box")):
+		sendBoxAway()
+	elif (event.is_action_pressed("close_box")):
+		closeCurrentBox()
 
 func createNewSBox():
 	createNewBox(boxSPrefab)
