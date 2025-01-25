@@ -2,6 +2,7 @@ extends DragableTool
 
 @onready var tapeDecal: Decal = $Decal2
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@export var gameController: GameController
 var tapeSounds: Array[AudioStream] = [
 	preload("res://sounds/tape1.wav"),
 	preload("res://sounds/tape2.wav"),
@@ -10,12 +11,19 @@ var tapeSounds: Array[AudioStream] = [
 
 func useTool():
 	if dragging:
+
+		if gameController.currentBoxObject == null:
+			return
+		if gameController.currentBoxObject.isOpen:
+			return;
+
 		var space_state = get_world_3d().direct_space_state
 		var from = global_transform.origin
 		var to = from + Vector3.DOWN * 1000
 		var query = PhysicsRayQueryParameters3D.new()
 		query.from = from
 		query.to = to
+		query.collision_mask = 2 # Only collide with objects in layer 2
 		var result = space_state.intersect_ray(query)
 		if result:
 
@@ -39,11 +47,11 @@ func useTool():
 			newDecal.cull_mask = tapeDecal.cull_mask
 
 			# Move the tool down with impulse
-			var impulse = Vector3.DOWN * 50
+			var impulse = Vector3.DOWN * 100
 			# Add a bit of force relative to the rotation
 			var angle = self.global_rotation.y
-			impulse.x += sin(angle) * 20
-			impulse.z += cos(angle) * 20
+			impulse.x += sin(angle) * 100
+			impulse.z += cos(angle) * 100
 
 
 			self.apply_impulse(impulse)
@@ -53,4 +61,3 @@ func playTapeSound():
 	var randomAudio = tapeSounds[randi() % tapeSounds.size()]
 	audioPlayer.stream = randomAudio
 	audioPlayer.play()
-

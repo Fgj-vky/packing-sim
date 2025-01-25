@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=12 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="3_38hv7"]
-[ext_resource type="PackedScene" uid="uid://ce2oagjorwmtn" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
-[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
+[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://4xadrga8nj80" path="res://prefabs/dragableObject/stamp.tscn" id="8_rbu15"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
 friction = 0.1
@@ -34,7 +35,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_hdgp2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.224781, 0.974409, 0, -0.974409, 0.224781, 0, 8.66603, 1.27514)
+transform = Transform3D(1, 0, 0, 0, 0.4057, 0.914006, 0, -0.914006, 0.4057, 0, 8.66603, 3.9397)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.810256, -0.444944, 0.381457, 0, 1.40698, 0)
@@ -60,5 +61,10 @@ transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.03
 [node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84153, 0, 0)
 
-[node name="tapeRoller" parent="." instance=ExtResource("5_7xu1i")]
+[node name="tapeRoller" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("5_7xu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77912, 0.0500007, -0.0437994)
+gameController = NodePath("../GameController")
+
+[node name="Stamp" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("8_rbu15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13841, 0.0500002, 2.37863)
+gameController = NodePath("../GameController")
