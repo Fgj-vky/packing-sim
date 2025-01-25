@@ -14,6 +14,7 @@ var isOpen: bool = false;
 
 var itemsInTheBox: Array[DragableObject] = [];
 var fillAmount: int = 0;
+var itemNames: Array[String] = [];
 
 signal fill_amount_changed(new_value:float);
 
@@ -33,6 +34,9 @@ func open():
 
 func close():
 	var fill = fillAmount;
+	
+	for item in itemsInTheBox:
+		itemNames.append(item.itemName);
 	animPlayer.play_backwards("Open");
 	audioPlayer.stream = closeSound;
 	audioPlayer.play();

@@ -10,6 +10,7 @@ var targetRotation = Quaternion.IDENTITY
 @onready var meshInstance = $MeshInstance3D
 
 @export var itemSize: int = 1
+@export var itemName = ""
 
 signal picked_up;
 signal released;
