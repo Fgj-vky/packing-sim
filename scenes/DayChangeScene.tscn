@@ -21,6 +21,7 @@ moneyEarnedLable = NodePath("VBoxContainer/VBoxContainer/HBoxContainer3/Label2")
 expensesLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer4/Label2")
 savingsLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer5/Label2")
 totalLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer6/Label2")
+gameScene = "res://scenes/ItemDragScene.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 0.713726)
@@ -141,3 +142,25 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "$200"
 horizontal_alignment = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit"
+
+[node name="Container" type="Container" parent="VBoxContainer/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resume
+"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer7/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer7/ResumeButton" to="." method="_on_resume_button_pressed"]
