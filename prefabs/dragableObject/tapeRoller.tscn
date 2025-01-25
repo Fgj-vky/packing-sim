@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cx8gay6se77y1"]
 
 [ext_resource type="PackedScene" uid="uid://con5blwk6qls1" path="res://prefabs/dragableObject/dragableTool.tscn" id="1_7ltas"]
-[ext_resource type="ArrayMesh" uid="uid://dybv6dhk04m5v" path="res://models/taperoller/tapeRollerMesh.res" id="2_nsys7"]
+[ext_resource type="ArrayMesh" uid="uid://b4eoy3puoex8b" path="res://models/taperoller/tapeRollerMesh.res" id="2_nsys7"]
 [ext_resource type="Script" path="res://prefabs/dragableObject/tape_roller.gd" id="2_s51pf"]
 [ext_resource type="Texture2D" uid="uid://bpri1kjlam7ry" path="res://textures/tape.png" id="4_fameo"]
 
