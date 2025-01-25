@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cri7mr33ylgdj" path="res://models/boxMedium/boxMedium.glb" id="1_o2x1l"]
 [ext_resource type="Script" path="res://prefabs/box/box.gd" id="2_1h2tv"]
+[ext_resource type="Material" uid="uid://405gd7po40d" path="res://materials/smokeparticle.tres" id="3_30wn4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fs3y5"]
 size = Vector3(0.506836, 0.404663, 0.696289)
@@ -62,11 +63,8 @@ initial_velocity_min = 1.0
 initial_velocity_max = 2.0
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61hm0"]
-disable_receive_shadows = true
-
 [sub_resource type="QuadMesh" id="QuadMesh_mmmfl"]
-material = SubResource("StandardMaterial3D_61hm0")
+material = ExtResource("3_30wn4")
 size = Vector2(1.5, 1.5)
 orientation = 1
 
