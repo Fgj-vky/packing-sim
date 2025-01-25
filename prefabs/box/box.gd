@@ -23,6 +23,9 @@ var stampCount = 0
 
 signal fill_amount_changed(new_value:float);
 
+@export var flapColliders: Array[CollisionShape3D]
+@export var topCollider: CollisionShape3D
+
 func _ready():
 	containerArea.body_entered.connect(onObjectEntered);
 	containerArea.body_exited.connect(onObjectRemoved);
@@ -56,6 +59,10 @@ func close():
 	if receipt:
 		receipt.queue_free();
 	fillAmount = fill;
+
+	for collider in flapColliders:
+		collider.disabled = true;
+	topCollider.disabled = false;
 
 func onObjectEntered(body: Node3D):
 	if(body is not DragableObject):
