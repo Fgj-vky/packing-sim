@@ -46,7 +46,6 @@ func createNewBox(boxScene: PackedScene):
 	get_parent().add_child(box)
 	box.global_position = boxExitLocation.global_position
 	currentBoxObject = box
-	uiLayer.setCurrentBoxObject(currentBoxObject)
 	var boxTween = get_tree().create_tween()
 	boxTween.tween_property(box, "global_position", boxLocation.global_position, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	boxTween.tween_callback(Callable(currentBoxObject, "open"))
@@ -61,7 +60,6 @@ func closeCurrentBox():
 	if(!currentBoxObject.isOpen):
 		return;
 	
-	uiLayer.hideBoxFillDisplay()
 	currentBoxObject.close()
 
 func sendBoxAway():
