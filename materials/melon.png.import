@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4c23e48t7d3k"
-path="res://.godot/imported/melon_melon.png-731aae39ac39e88c44734686abd522f7.ctex"
+uid="uid://dsbn1bo0lh2ax"
+path.s3tc="res://.godot/imported/melon.png-535e3a1bfa18405a2e6229e69c6a1d22.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "7bbf3ab552365cc079e2456716508624"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://models/melon/melon_melon.png"
-dest_files=["res://.godot/imported/melon_melon.png-731aae39ac39e88c44734686abd522f7.ctex"]
+source_file="res://materials/melon.png"
+dest_files=["res://.godot/imported/melon.png-535e3a1bfa18405a2e6229e69c6a1d22.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

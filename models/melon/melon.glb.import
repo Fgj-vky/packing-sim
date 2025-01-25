@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dikrsd578msmw"
+uid="uid://cmetexvj1klrw"
 path="res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.scn"
 
 [deps]
@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.sc
 [params]
 
 nodes/root_type=""
-nodes/root_name="Melon"
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -31,6 +31,29 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"melon": {
+"use_external/enabled": true,
+"use_external/path": "res://materials/melon.tres"
+}
+},
+"meshes": {
+"melon_melon": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://models/melon/melonMesh.res"
+}
+},
+"nodes": {
+"PATH:melon": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
