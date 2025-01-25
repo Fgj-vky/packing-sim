@@ -8,7 +8,7 @@ func _process(delta):
 		targetRotation = targetRotation * Quaternion.from_euler(Vector3(0, 0.1, 0))
 	if Input.is_action_pressed("rotate_tool_right"):
 		targetRotation = targetRotation * Quaternion.from_euler(Vector3(0, -0.1, 0))
-	if Input.is_action_pressed("use_tool"):
+	if Input.is_action_just_pressed	("use_tool"):
 		useTool()
 
 func useTool():

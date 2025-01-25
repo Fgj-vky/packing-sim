@@ -12,6 +12,12 @@ func useTool():
 		query.to = to
 		var result = space_state.intersect_ray(query)
 		if result:
+
+			# Check if result is a Box by checking if it has layer 2
+			
+			if result.collider.collision_layer & 2 == 0:
+				return
+
 			var objectBelow = result.collider
 			var objectBelowRoot = objectBelow.get_parent()
 
@@ -25,3 +31,13 @@ func useTool():
 			newDecal.global_rotation = tapeDecal.global_rotation
 			newDecal.scale = tapeDecal.scale / objectBelowRoot.scale
 			newDecal.cull_mask = tapeDecal.cull_mask
+
+			# Move the tool down with impulse
+			var impulse = Vector3.DOWN * 50
+			# Add a bit of force relative to the rotation
+			var angle = self.global_rotation.y
+			impulse.x += sin(angle) * 20
+			impulse.z += cos(angle) * 20
+
+
+			self.apply_impulse(impulse)
