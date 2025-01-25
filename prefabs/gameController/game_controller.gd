@@ -12,6 +12,7 @@ var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
 signal new_box_created(box:Box);
+signal tried_to_close_full_box();
 
 @onready var dayTimer: Timer = $DayTimer;
 @export_file var dayChangeScene: String;
@@ -55,6 +56,7 @@ func closeCurrentBox():
 	if currentBoxObject == null:
 		return
 	if currentBoxObject.isBoxTooFull():
+		tried_to_close_full_box.emit();
 		return;
 	if(!currentBoxObject.isOpen):
 		return;
@@ -66,6 +68,7 @@ func sendBoxAway():
 	if currentBoxObject == null:
 		return
 	if currentBoxObject.isBoxTooFull():
+		tried_to_close_full_box.emit();
 		return;
 	if currentBoxObject.isOpen:
 		uiLayer.hideBoxFillDisplay()
