@@ -35,7 +35,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_hdgp2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.224781, 0.974409, 0, -0.974409, 0.224781, 0, 8.66603, 1.27514)
+transform = Transform3D(1, 0, 0, 0, 0.4057, 0.914006, 0, -0.914006, 0.4057, 0, 8.66603, 3.9397)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.810256, -0.444944, 0.381457, 0, 1.40698, 0)

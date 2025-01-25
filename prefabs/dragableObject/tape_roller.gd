@@ -23,6 +23,7 @@ func useTool():
 		var query = PhysicsRayQueryParameters3D.new()
 		query.from = from
 		query.to = to
+		query.collision_mask = 2 # Only collide with objects in layer 2
 		var result = space_state.intersect_ray(query)
 		if result:
 

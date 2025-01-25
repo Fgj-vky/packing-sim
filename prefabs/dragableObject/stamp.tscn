@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://con5blwk6qls1" path="res://prefabs/dragableObject/dragableTool.tscn" id="1_yjdlh"]
 [ext_resource type="Script" path="res://prefabs/dragableObject/stamp.gd" id="2_7ujpj"]
 [ext_resource type="ArrayMesh" uid="uid://d3u580vriifdh" path="res://models/handStamp/handStampMesh.res" id="3_2d437"]
-[ext_resource type="Texture2D" uid="uid://be87v0nk2bopn" path="res://textures/clockFace.png" id="4_5v3lr"]
+[ext_resource type="Texture2D" uid="uid://dxs6niovp82th" path="res://textures/boxLabels/box_label_1.png" id="4_b6kh4"]
 
 [node name="Stamp" instance=ExtResource("1_yjdlh")]
 script = ExtResource("2_7ujpj")
@@ -17,7 +17,8 @@ mesh = ExtResource("3_2d437")
 
 [node name="Decal2" type="Decal" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-sorting_offset = 1.0
+sorting_offset = 10.0
 size = Vector3(0.6, 10, 0.6)
-texture_albedo = ExtResource("4_5v3lr")
+texture_albedo = ExtResource("4_b6kh4")
+albedo_mix = 0.5
 cull_mask = 1047554
