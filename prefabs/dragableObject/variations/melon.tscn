@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce2oagjorwmtn"]
 
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_x6jj2"]
-[ext_resource type="ArrayMesh" uid="uid://y0hqyiqwipe5" path="res://models/melon/melonMesh.res" id="2_y73y2"]
+[ext_resource type="ArrayMesh" uid="uid://gkmawqrrsvm8" path="res://models/melon/melonMesh.res" id="2_y73y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6clsl"]
-size = Vector3(2, 2.00012, 2.0166)
+size = Vector3(0.850586, 0.817931, 0.801758)
 
 [node name="DragableObject" instance=ExtResource("1_x6jj2")]
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.994568, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403474, 0)
 shape = SubResource("BoxShape3D_6clsl")
 
 [node name="MeshInstance3D" parent="." index="1"]
