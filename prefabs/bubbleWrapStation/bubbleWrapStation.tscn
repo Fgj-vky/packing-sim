@@ -1,8 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhb0shfwlj13b"]
+[gd_scene load_steps=6 format=3 uid="uid://dhb0shfwlj13b"]
 
 [ext_resource type="Script" path="res://prefabs/bubbleWrapStation/bubble_wrap_station.gd" id="1_rj55j"]
-[ext_resource type="PackedScene" uid="uid://bdbj04w7o66c7" path="res://prefabs/bubbleWrapStation/bubbleWrap.tscn" id="2_qx8g7"]
+[ext_resource type="PackedScene" uid="uid://dh8b0we4jvabo" path="res://models/bubblewrapMachine/bubblewrapMachine.glb" id="2_wuh8y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4qhlg"]
+size = Vector3(2.06934, 1.32922, 2.42719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4jla"]
+size = Vector3(0.092, 1.555, 2.437)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gaaog"]
+size = Vector3(2.29785, 1.90808, 2.70654)
 
 [node name="BubbleWrapStation" type="Node3D"]
 script = ExtResource("1_rj55j")
-bubbleWrapScene = ExtResource("2_qx8g7")
+
+[node name="BubblewrapMachine" parent="." instance=ExtResource("2_wuh8y")]
+
+[node name="Skeleton3D" parent="BubblewrapMachine/bubblewrapMachine_Rig" index="0"]
+bones/1/rotation = Quaternion(-1.53133e-07, -1.54543e-08, 0.707107, 0.707107)
+
+[node name="SpawnLocation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0327148, 0.812544, -0.0437927)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0327148, 0.812544, -0.0437927)
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_4qhlg")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+freeze = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14619, 0.775757, 0.0288696)
+shape = SubResource("BoxShape3D_f4jla")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05017, 0.775757, 0.0288696)
+shape = SubResource("BoxShape3D_f4jla")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.204381, 0.775757, 1.26041)
+shape = SubResource("BoxShape3D_f4jla")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.204381, 0.775757, -1.37549)
+shape = SubResource("BoxShape3D_f4jla")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54855, 0.454041, -0.0749512)
+shape = SubResource("BoxShape3D_gaaog")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="BubblewrapMachine"]
