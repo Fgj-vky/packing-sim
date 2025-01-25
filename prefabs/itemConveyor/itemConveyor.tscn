@@ -2,24 +2,22 @@
 
 [ext_resource type="Script" path="res://prefabs/itemConveyor/item_conveyor.gd" id="1_cgf3e"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="2_envns"]
+[ext_resource type="ArrayMesh" uid="uid://bfo0onyyyey7b" path="res://models/conveyor/conveyorMesh.res" id="3_k1kyd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_toqgl"]
 friction = 0.1
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lukbu"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_klcp5"]
-size = Vector3(6.18848, 0.0187988, 1.01855)
+size = Vector3(15.4863, 0.397064, 1.52441)
 
 [node name="ItemConveyor" type="Node3D"]
-transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, 0, 0, 0)
 script = ExtResource("1_cgf3e")
 items = Array[PackedScene]([ExtResource("2_envns")])
 itemSpacing = 0.1
-conveyorSpeed = 3.0
+conveyorSpeed = 5.0
 
 [node name="SpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -2.76909, 4.00132, 0)
+transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, -3.80168, 3.13309, 0)
 
 [node name="ItemHolder" type="Node3D" parent="."]
 
@@ -30,10 +28,10 @@ lock_rotation = true
 freeze = true
 
 [node name="Belt" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(3.07093, 0, 0, 0, 1, 0, 0, 0, 0.504735, 0, 0, 0)
-mesh = SubResource("PlaneMesh_lukbu")
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 0)
+mesh = ExtResource("3_k1kyd")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0225848, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0.198988, 0)
 shape = SubResource("BoxShape3D_klcp5")

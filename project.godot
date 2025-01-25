@@ -13,7 +13,10 @@ config_version=5
 config/name="Warehouse Experience"
 run/main_scene="res://scenes/ItemDragScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://textures/kurkkumopo.png"
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
