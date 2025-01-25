@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wj6inkpbtvit"
-path.s3tc="res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.s3tc.ctex"
+path="res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "1923821f71619cd35f28bf4f1de3894f"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/taperoller_taperoller.png"
-dest_files=["res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.s3tc.ctex"]
+dest_files=["res://.godot/imported/taperoller_taperoller.png-2421693d8f065364d3efac80184a39a1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

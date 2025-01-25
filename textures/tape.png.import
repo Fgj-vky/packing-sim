@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cylfkuxutxxhr"
-path="res://.godot/imported/bubblewrap_bubble.png-27337a0696893269eefc682646cdc8f4.ctex"
+uid="uid://bpri1kjlam7ry"
+path="res://.godot/imported/tape.png-98e5fface3fa9b3ea07e7f58058e29e5.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "c10d15310b2a0da4cfc258d31f24e632"
 }
 
 [deps]
 
-source_file="res://models/bubblewrap_bubble.png"
-dest_files=["res://.godot/imported/bubblewrap_bubble.png-27337a0696893269eefc682646cdc8f4.ctex"]
+source_file="res://textures/tape.png"
+dest_files=["res://.godot/imported/tape.png-98e5fface3fa9b3ea07e7f58058e29e5.ctex"]
 
 [params]
 
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -34,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
