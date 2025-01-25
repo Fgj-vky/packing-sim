@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8l64srqlcps6"]
+
+[ext_resource type="Texture2D" uid="uid://1pxbfujwhi30" path="res://materials/bubblewrapMachine.png" id="1_pe1gn"]
+
+[resource]
+albedo_texture = ExtResource("1_pe1gn")
+texture_filter = 0

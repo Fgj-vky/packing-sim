@@ -61,7 +61,7 @@ func useTool():
 			newDecal.sorting_offset = stampDecal.sorting_offset
 
 			# Move the tool down with impulse
-			var impulse = Vector3.DOWN * 150
+			var impulse = Vector3.DOWN * 100
 			# Add a bit of force relative to the rotation
 
 			self.apply_impulse(impulse)
