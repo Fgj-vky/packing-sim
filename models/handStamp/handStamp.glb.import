@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmetexvj1klrw"
-path="res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.scn"
+uid="uid://dacct1j553eby"
+path="res://.godot/imported/handStamp.glb-da694067197e12296eabeff001a2c914.scn"
 
 [deps]
 
-source_file="res://models/melon/melon.glb"
-dest_files=["res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.scn"]
+source_file="res://models/handStamp/handStamp.glb"
+dest_files=["res://.godot/imported/handStamp.glb-da694067197e12296eabeff001a2c914.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=4.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -33,25 +33,20 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"melon": {
+"handStamp": {
 "use_external/enabled": true,
-"use_external/path": "res://materials/melon.tres"
+"use_external/path": "res://materials/handStamp.tres"
 }
 },
 "meshes": {
-"melon_melon": {
+"handStamp_handStamp": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://models/melon/melonMesh.res"
-}
-},
-"nodes": {
-"PATH:melon": {
-"generate/physics": true
+"save_to_file/path": "res://models/handStamp/handStampMesh.res"
 }
 }
 }
