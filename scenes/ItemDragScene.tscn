@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="3_38hv7"]
-[ext_resource type="PackedScene" uid="uid://dk0160t034gnc" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
-[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://ce2oagjorwmtn" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
 [ext_resource type="PackedScene" uid="uid://4xadrga8nj80" path="res://prefabs/dragableObject/stamp.tscn" id="8_rbu15"]
 [ext_resource type="PackedScene" uid="uid://dhy1gf3tdyotc" path="res://prefabs/clock/clock.tscn" id="9_y6rwl"]
 [ext_resource type="PackedScene" uid="uid://c5fkeeqlecjm0" path="res://prefabs/printer/printer.tscn" id="10_4qvj0"]
@@ -48,7 +48,7 @@ transform = Transform3D(0.586075, 0.61514, -0.527369, 0, 0.650867, 0.759192, 0.8
 transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.53366, 0.622478)
 
 [node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
-transform = Transform3D(5.66344, 0, 0, 0, 1, 0, 0, 0, 1.98184, -0.190714, 0.05, -6.30688)
+transform = Transform3D(3.56803, 0, 0, 0, 1, 0, 0, 0, 1.98184, -0.190714, 0.05, -6.30688)
 items = Array[PackedScene]([ExtResource("3_38hv7"), ExtResource("4_hi6lm")])
 
 [node name="GameController" parent="." node_paths=PackedStringArray("boxLocation", "boxExitLocation", "uiLayer", "printer") instance=ExtResource("2_4ef7o")]

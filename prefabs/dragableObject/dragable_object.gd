@@ -27,7 +27,7 @@ func _process(delta):
 	var pos = global_position
 	shadowDecal.set_position(Vector3(pos.x, pos.y - 6, pos.z))
 
-	if(position.y < -20):
+	if(position.y < -10):
 		onRemoved();
 		queue_free();
 
