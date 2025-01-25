@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=14 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
 [ext_resource type="PackedScene" uid="uid://cfqo3k3eu86qm" path="res://models/boxpiles/boxpile_01.glb" id="2_nifwc"]
 [ext_resource type="PackedScene" uid="uid://c4v141mmmsuwr" path="res://models/boxpiles/boxpile_02.glb" id="3_86jcp"]
 [ext_resource type="PackedScene" uid="uid://wgatucg5k1o4" path="res://models/boxpiles/boxpile_03.glb" id="4_3v81e"]
+[ext_resource type="Script" path="res://scenes/main_menu_item.gd" id="4_jyyct"]
 [ext_resource type="ArrayMesh" uid="uid://dix01fo1c2uci" path="res://models/room/tableMesh.res" id="5_ldx4d"]
 [ext_resource type="PackedScene" uid="uid://cml5cbtxvn21c" path="res://prefabs/box/boxSmall.tscn" id="6_h5wdt"]
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
@@ -39,12 +40,6 @@ fov = 45.0
 [node name="BoxS" parent="." instance=ExtResource("6_h5wdt")]
 transform = Transform3D(-1.96701e-07, 0, -4.5, 0, 4.5, 0, 4.5, 0, -1.96701e-07, -0.471868, -2.67373, -6.50807)
 
-[node name="Skeleton3D" parent="BoxS/box_s_rig" index="0"]
-bones/1/rotation = Quaternion(-1.9528e-07, 2.66925e-08, 0.707107, 0.707107)
-bones/2/rotation = Quaternion(-2.66925e-08, -1.9528e-07, -0.707107, 0.707107)
-bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
-bones/4/rotation = Quaternion(0.5, 0.5, -0.5, -0.5)
-
 [node name="AnimationPlayer" parent="BoxS" index="1"]
 autoplay = "Open"
 
@@ -53,10 +48,12 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 
 [node name="Start" parent="." instance=ExtResource("7_7ojjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63253, -1.91703, -9.48864)
+script = ExtResource("4_jyyct")
 itemName = "Start"
 
 [node name="End" parent="." instance=ExtResource("7_7ojjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -9.48864)
+script = ExtResource("4_jyyct")
 itemName = "End"
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
