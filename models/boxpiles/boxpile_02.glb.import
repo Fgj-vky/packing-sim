@@ -35,7 +35,7 @@ _subresources={
 "materials": {
 "box_s": {
 "use_external/enabled": true,
-"use_external/path": "res://models/materials/box_s.tres"
+"use_external/path": "res://materials/box_s.tres"
 }
 }
 }
