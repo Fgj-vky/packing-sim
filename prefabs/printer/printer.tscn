@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5fkeeqlecjm0"]
+
+[ext_resource type="Script" path="res://prefabs/printer/printer.gd" id="1_do702"]
+[ext_resource type="ArrayMesh" uid="uid://e8wckw2ycwk8" path="res://models/printer/printerMesh.res" id="1_eo2tg"]
+[ext_resource type="AudioStream" uid="uid://daiw3wajmi4ad" path="res://sounds/printer.wav" id="3_qwjyn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l04b4"]
+size = Vector3(0.814209, 0.763611, 1.13037)
+
+[node name="Printer" type="RigidBody3D" node_paths=PackedStringArray("receiptSpawnLocation")]
+freeze = true
+script = ExtResource("1_do702")
+receiptSpawnLocation = NodePath("SpawnLocation")
+
+[node name="PrinterMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_eo2tg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045166, 0.416901, 0.0217285)
+shape = SubResource("BoxShape3D_l04b4")
+
+[node name="SpawnLocation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.869953, 0.86968)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_qwjyn")

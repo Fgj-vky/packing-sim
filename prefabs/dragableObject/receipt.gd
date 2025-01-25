@@ -1,0 +1,2 @@
+extends DragableObject
+class_name Receipt

@@ -23,6 +23,7 @@ func processBox(box: Box, order: Array[String]):
             box.itemNames.erase(item);
             correctItems += 1;
     print("Correct items: " + str(correctItems) + "/" + str(requiredItems));
+    print("Box has receipt: " + str(box.hasReceipt));
 
     boxes += 1;
     if(box.fillAmount > 0):
