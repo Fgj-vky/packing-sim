@@ -4,6 +4,7 @@ var dragging: bool = false
 var currentDragObject: DragableObject = null
 var highlightedObject: DragableObject = null
 var distanceFromScreen = 10
+var inGame = true;
 
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
 var grabSound = preload("res://sounds/grab.wav")
@@ -16,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if dragging and currentDragObject != null:
+	if inGame and dragging and currentDragObject != null:
 		var mousePos = get_viewport().get_mouse_position()
 		var ray = get_viewport().get_camera_3d().project_ray_origin(mousePos)
 		var target = ray + get_viewport().get_camera_3d().project_ray_normal(mousePos) * distanceFromScreen
