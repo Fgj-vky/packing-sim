@@ -24,6 +24,8 @@ func processBox(box: Box, order: Array[String]):
             correctItems += 1;
     print("Correct items: " + str(correctItems) + "/" + str(requiredItems));
     print("Box has receipt: " + str(box.hasReceipt));
+    print("Box stamps: " + str(box.stampCount));
+    print("Box tapes: " + str(box.tapeCount));
 
     boxes += 1;
     if(box.fillAmount > 0):

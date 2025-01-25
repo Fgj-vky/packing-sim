@@ -68,6 +68,7 @@ func useTool():
 			playStampSound()
 			var newTexture = stampTextures[randi() % stampTextures.size()]
 			stampDecal.texture_albedo = newTexture
+			gameController.currentBoxObject.stampCount += 1
 
 func playStampSound():
 	audioPlayer.stream = stampSound
