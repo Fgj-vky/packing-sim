@@ -15,6 +15,8 @@ var isOpen: bool = false;
 var itemsInTheBox: Array[DragableObject] = [];
 var fillAmount: int = 0;
 var itemNames: Array[String] = [];
+var receipt: Receipt = null
+var hasReceipt: bool = false
 
 signal fill_amount_changed(new_value:float);
 
@@ -34,26 +36,32 @@ func open():
 
 func close():
 	var fill = fillAmount;
-	
 	for item in itemsInTheBox:
 		itemNames.append(item.itemName);
 	animPlayer.play_backwards("Open");
 	audioPlayer.stream = closeSound;
 	audioPlayer.play();
+	closingParticles.emitting = true;
 	if(itemsInTheBox.size() > 0):
 		await get_tree().create_timer(0.1).timeout
-		closingParticles.emitting = true;
 		for item in itemsInTheBox:
 			item.onRemoved();
 			item.queue_free();
 			pass
 	await animPlayer.animation_finished;
 	isOpen = false;
+	if receipt:
+		receipt.queue_free();
 	fillAmount = fill;
 
 func onObjectEntered(body: Node3D):
 	if(body is not DragableObject):
 		return;
+
+	if (body is Receipt):
+		receipt = body as Receipt
+		hasReceipt = true
+		return
 	
 	var item = body as DragableObject
 	itemsInTheBox.append(item);
@@ -65,7 +73,13 @@ func onObjectEntered(body: Node3D):
 func onObjectRemoved(body: Node3D):
 	if(body is not DragableObject):
 		return;
-		
+
+	if (body is Receipt):
+		receipt = null
+		if isOpen:
+			hasReceipt = false
+		return
+	
 	var item = body as DragableObject
 	var itemIndex = itemsInTheBox.find(item);		
 	if(itemIndex >= 0):

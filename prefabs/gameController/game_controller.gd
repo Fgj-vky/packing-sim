@@ -17,6 +17,7 @@ var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
 var currentOrder: Array[String] = []
 var availableItems = ["melon", "book"]
+@export var printer: Printer
 
 func createNewOrder():
 	if currentOrder.size() > 0:
@@ -26,6 +27,7 @@ func createNewOrder():
 		var item = availableItems[randi() % availableItems.size()]
 		currentOrder.append(item)
 	uiLayer.updateOrderDisplay(currentOrder)
+	printer.print()
 	
 	
 
@@ -88,6 +90,7 @@ func endDay():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dayTimer.timeout.connect(endDay);
+	await get_tree().create_timer(1.0).timeout
 	createNewOrder()
 	pass # Replace with function body.
 
