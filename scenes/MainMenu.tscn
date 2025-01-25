@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://dc58g3v7ihbg8"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
+[ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
+[ext_resource type="PackedScene" uid="uid://cfqo3k3eu86qm" path="res://models/boxpiles/boxpile_01.glb" id="2_nifwc"]
+[ext_resource type="PackedScene" uid="uid://c4v141mmmsuwr" path="res://models/boxpiles/boxpile_02.glb" id="3_86jcp"]
+[ext_resource type="PackedScene" uid="uid://wgatucg5k1o4" path="res://models/boxpiles/boxpile_03.glb" id="4_3v81e"]
+[ext_resource type="ArrayMesh" uid="uid://dix01fo1c2uci" path="res://models/room/tableMesh.res" id="5_ldx4d"]
+[ext_resource type="PackedScene" uid="uid://cml5cbtxvn21c" path="res://prefabs/box/boxSmall.tscn" id="6_h5wdt"]
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5jya2"]
+size = Vector3(8.66577, 0.521118, 4.66174)
+
+[sub_resource type="Environment" id="Environment_2fgh0"]
+background_mode = 1
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.1215
+fog_height = -6.2
+fog_height_density = 0.0515
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_ctmcp")
+gameScene = "res://scenes/ItemDragScene.tscn"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.514679, 0.857383, 0, -0.857383, 0.514679, -0.131562, 10.6593, -1.94557)
+fov = 45.0
+
+[node name="BoxS" parent="." instance=ExtResource("6_h5wdt")]
+transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, -0.471868, -2.67373, -5.8832)
+
+[node name="AnimationPlayer" parent="BoxS" index="1"]
+autoplay = "Open"
+
+[node name="Start" parent="." instance=ExtResource("7_7ojjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63253, -1.91703, -8.86377)
+itemName = "Start"
+
+[node name="End" parent="." instance=ExtResource("7_7ojjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -8.86377)
+itemName = "End"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.463213, -2.67373, -6.83676)
+freeze = true
+
+[node name="TableMesh" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("5_ldx4d")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.239441, -0.391296)
+shape = SubResource("BoxShape3D_5jya2")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="FloorMesh" type="MeshInstance3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6271, -0.473486, -16.5753)
+mesh = ExtResource("1_muglu")
+skeleton = NodePath("../..")
+
+[node name="FloorMesh2" type="MeshInstance3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3729, -0.473486, -16.5753)
+mesh = ExtResource("1_muglu")
+skeleton = NodePath("../..")
+
+[node name="FloorMesh3" type="MeshInstance3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6271, -0.473486, -42.5753)
+mesh = ExtResource("1_muglu")
+skeleton = NodePath("../..")
+
+[node name="FloorMesh4" type="MeshInstance3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3729, -0.473486, -42.5753)
+mesh = ExtResource("1_muglu")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="env"]
+transform = Transform3D(0.564725, 0.752313, 0.33928, -0.400717, -0.109435, 0.909643, 0.721465, -0.649654, 0.239664, 0.722521, 6.09422, -2.46215)
+light_energy = 16.0
+spot_range = 18.3496
+spot_angle = 69.5526
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_2fgh0")
+
+[node name="Boxpile01" parent="env" instance=ExtResource("2_nifwc")]
+transform = Transform3D(-0.0328816, 0, -3.99987, 0, 4, 0, 3.99987, 0, -0.0328816, 0.0874543, -4.16924, -12.9506)
+
+[node name="Boxpile02" parent="env" instance=ExtResource("3_86jcp")]
+transform = Transform3D(-2.30989, 0, -3.26564, 0, 4, 0, 3.26564, 0, -2.30989, 3.38721, -3.8197, -11.9622)
+
+[node name="Boxpile03" parent="env" instance=ExtResource("4_3v81e")]
+transform = Transform3D(2.23353, 0, -3.31833, 0, 4, 0, 3.31833, 0, 2.23353, -4.54474, -4.41746, -12.0739)
+
+[editable path="BoxS"]
