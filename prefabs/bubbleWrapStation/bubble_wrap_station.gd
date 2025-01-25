@@ -1,7 +1,8 @@
 extends Node3D
 
 @onready var animationPlayer: AnimationPlayer = $"BubblewrapMachine/AnimationPlayer"
-var packedItemScen = preload("res://prefabs/dragableObject/dragableObject.tscn")
+
+@export var wrappedItemScenes: Array[PackedScene];
 @onready var spawnLocation: Node3D = $SpawnLocation
 
 var currentItems: Array[DragableObject] = []
@@ -11,7 +12,7 @@ func activate():
 	await animationPlayer.animation_finished
 	var packedItems: Array[DragableObject] = []
 	for item in currentItems:
-		var packedItem = packedItemScen.instantiate()
+		var packedItem = wrappedItemScenes.pick_random().instantiate()
 		packedItem.itemName = item.itemName
 		packedItem.itemSize = item.itemSize
 		packedItem.global_transform = item.global_transform

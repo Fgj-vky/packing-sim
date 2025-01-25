@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj7f46cpecyer"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_s7oap"]
+[ext_resource type="ArrayMesh" uid="uid://bq4ckn7ia7e1h" path="res://models/bubblewrapped/bubblewrappedBallMesh.res" id="2_147r6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nqssv"]
+radius = 0.397806
+
+[node name="WrappedSphere" instance=ExtResource("1_s7oap")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383444, 0)
+shape = SubResource("SphereShape3D_nqssv")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = ExtResource("2_147r6")

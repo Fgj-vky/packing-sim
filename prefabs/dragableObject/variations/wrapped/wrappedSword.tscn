@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdm02cmw2tw3l"]
+
+[ext_resource type="Script" path="res://prefabs/dragableObject/dragable_object.gd" id="1_vf3yu"]
+[ext_resource type="ArrayMesh" uid="uid://bre7hf4k27iph" path="res://models/bubblewrapped/bubblewrappedSwordMesh.res" id="2_icyr1"]
+[ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="3_1870t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
+friction = 0.1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hject"]
+points = PackedVector3Array(-1.00024e-05, 0.31949, 0.279293, -0.0308789, 0.31949, 0.265951, -0.0211593, 0.298493, 0.263272, -1.00024e-05, 0.289918, 0.264092, 0.0211493, 0.298493, 0.263272, 0.0308689, 0.31949, 0.265951, 0.0304389, 1.08758, 0.0304007, -1.00024e-05, 1.08758, 0.0430312, -0.0304489, 1.08758, 0.0304007, -0.0430585, 0.31949, 0.244736, -0.0304489, 0.289039, 0.244736, -0.0304489, 0.0336684, 0.0304007, -0.0211593, 0.01509, 0.0209962, -1.00024e-05, 0.0142105, 0.0295258, 0.0211493, 0.01509, 0.0209962, 0.0304389, 0.0336684, 0.0304007, 0.0304389, 0.289039, 0.244736, 0.0430485, 0.31949, 0.244736, 0.0430485, 1.08758, -5.46873e-05, 0.0308689, 1.1088, -5.46873e-05, 0.0211493, 1.10616, 0.0209962, -1.00024e-05, 1.10704, 0.0295258, -0.0211593, 1.10616, 0.0209962, -0.0308789, 1.1088, -5.46873e-05, -0.0430585, 1.08758, -5.46873e-05, -0.0510782, 0.31949, -5.46873e-05, -0.0430585, 0.0336684, -5.46873e-05, -0.0308789, 0.0124516, -5.46873e-05, -1.00024e-05, -0.000850059, -5.46873e-05, 0.0308689, 0.0124516, -5.46873e-05, 0.0430485, 0.0336684, -5.46873e-05, 0.0510782, 0.31949, -5.46873e-05, 0.0304389, 1.08758, -0.0304554, 0.0430485, 0.31949, -0.244791, -1.00024e-05, 1.12221, -5.46873e-05, 0.0211493, 1.10616, -0.0210508, -0.0211593, 1.10616, -0.0210508, -0.0304489, 1.08758, -0.0304554, -0.0430585, 0.31949, -0.244791, -0.0304489, 0.0336684, -0.0304554, -0.0211593, 0.01509, -0.0210508, -1.00024e-05, 0.0142105, -0.0295805, 0.0211493, 0.01509, -0.0210508, 0.0304389, 0.0336684, -0.0304554, -1.00024e-05, 1.08758, -0.0430859, -1.00024e-05, 1.10704, -0.0295805, 0.0308689, 0.31949, -0.266006, -1.00024e-05, 0.31949, -0.279293, 0.0304389, 0.289039, -0.244791, -0.0308789, 0.31949, -0.266006, -0.0304489, 0.289039, -0.244791, -0.0211593, 0.298493, -0.263327, -1.00024e-05, 0.289918, -0.264202, 0.0211493, 0.298493, -0.263327)
+
+[node name="WrappedSword" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_4h5ay")
+script = ExtResource("1_vf3yu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_icyr1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hject")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+top_level = true
+size = Vector3(2, 10, 2)
+texture_albedo = ExtResource("3_1870t")
+lower_fade = 0.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
