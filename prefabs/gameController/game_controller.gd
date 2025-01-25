@@ -11,9 +11,10 @@ var boxSendAudio = preload("res://sounds/send.wav")
 var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
+signal new_box_created(box:Box);
+
 @onready var dayTimer: Timer = $DayTimer;
 @export_file var dayChangeScene: String;
-
 
 var currentOrder: Array[String] = []
 var availableItems = ["melon", "book"]
@@ -48,6 +49,7 @@ func createNewBox(boxScene: PackedScene):
 	var boxTween = get_tree().create_tween()
 	boxTween.tween_property(box, "global_position", boxLocation.global_position, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	boxTween.tween_callback(Callable(currentBoxObject, "open"))
+	new_box_created.emit(box);
 	
 func closeCurrentBox():
 	if currentBoxObject == null:
@@ -76,6 +78,7 @@ func sendBoxAway():
 
 	ProgressController.processBox(currentBoxObject, currentOrder);
 	
+	currentBoxObject.fill_amount_changed.emit(0);
 	currentBoxObject.queue_free()
 	currentBoxObject = null
 	uiLayer.setCurrentBoxObject(null)

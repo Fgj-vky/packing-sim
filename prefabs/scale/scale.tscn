@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://daqw46o7yikq5"]
+
+[ext_resource type="Script" path="res://prefabs/scale/scale.gd" id="1_a8be6"]
+[ext_resource type="ArrayMesh" uid="uid://cqc4s3bc8limh" path="res://models/scale/scaleMesh.res" id="1_v5pa5"]
+[ext_resource type="ArrayMesh" uid="uid://usnccexpsh7j" path="res://models/scale/scaleHandMesh.res" id="2_n8xms"]
+
+[node name="Scale" type="Node3D"]
+script = ExtResource("1_a8be6")
+minScaleX = 2.8
+maxScaleX = -2.8
+
+[node name="Scale" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_v5pa5")
+
+[node name="Hand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.064, 0.125, 2.74525)
+mesh = ExtResource("2_n8xms")

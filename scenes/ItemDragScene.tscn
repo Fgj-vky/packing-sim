@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=15 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="3_38hv7"]
-[ext_resource type="PackedScene" uid="uid://dk0160t034gnc" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
-[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://ce2oagjorwmtn" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
 [ext_resource type="PackedScene" uid="uid://4xadrga8nj80" path="res://prefabs/dragableObject/stamp.tscn" id="8_rbu15"]
 [ext_resource type="PackedScene" uid="uid://dhy1gf3tdyotc" path="res://prefabs/clock/clock.tscn" id="9_y6rwl"]
 [ext_resource type="PackedScene" uid="uid://c5fkeeqlecjm0" path="res://prefabs/printer/printer.tscn" id="10_4qvj0"]
+[ext_resource type="PackedScene" uid="uid://daqw46o7yikq5" path="res://prefabs/scale/scale.tscn" id="11_o0jds"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]
 friction = 0.1
@@ -60,7 +61,7 @@ printer = NodePath("../Printer")
 transform = Transform3D(0.98682, 0.0555052, -0.152003, -0.0440655, 0.996009, 0.0776228, 0.155705, -0.0699017, 0.985327, -11.3618, 0.232139, 2.50068)
 
 [node name="BoxPosition" type="Node3D" parent="GameController"]
-transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, 0.522106, 0, 2.51696)
+transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, -0.0517938, 1.4192, 0.180603)
 
 [node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84153, 0, 0)
@@ -79,3 +80,7 @@ gameController = NodePath("../GameController")
 
 [node name="Printer" parent="." instance=ExtResource("10_4qvj0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1935, 0.0500002, -2.76059)
+
+[node name="Scale" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("11_o0jds")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0140865, 0.0500002, -0.450107)
+gameController = NodePath("../GameController")
