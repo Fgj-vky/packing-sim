@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhy1gf3tdyotc"]
+
+[ext_resource type="Script" path="res://prefabs/clock/clock.gd" id="1_8s6c6"]
+[ext_resource type="ArrayMesh" uid="uid://nid200brlhi6" path="res://models/clock/clockMesh.res" id="2_lvcsy"]
+[ext_resource type="ArrayMesh" uid="uid://c28hrkibeogfj" path="res://models/clock/clockHandMesh.res" id="3_ua7an"]
+[ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="4_5dqja"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jej7f"]
+friction = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_goqak"]
+size = Vector3(0.876953, 0.915833, 0.495117)
+
+[node name="Clock" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_jej7f")
+script = ExtResource("1_8s6c6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_lvcsy")
+
+[node name="ClockHandMesh" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.59309e-08, -0.982935, 0.183951, -1.60815e-08, 0.183951, 0.982935, 0, 0.438833, 0.0997414)
+mesh = ExtResource("3_ua7an")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458405, -0.0693359)
+shape = SubResource("BoxShape3D_goqak")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+top_level = true
+size = Vector3(2, 10, 2)
+texture_albedo = ExtResource("4_5dqja")
+lower_fade = 0.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

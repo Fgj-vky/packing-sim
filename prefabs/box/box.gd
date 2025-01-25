@@ -44,6 +44,7 @@ func close():
 		await get_tree().create_timer(0.1).timeout
 		closingParticles.emitting = true;
 		for item in itemsInTheBox:
+			item.onRemoved();
 			item.queue_free();
 			pass
 	await animPlayer.animation_finished;
