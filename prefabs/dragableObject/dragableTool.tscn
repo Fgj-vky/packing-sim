@@ -13,6 +13,7 @@ friction = 0.1
 [node name="DragableTool" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("1_0rfsr")
+itemSize = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_42tu3")

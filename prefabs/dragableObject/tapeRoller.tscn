@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://con5blwk6qls1" path="res://prefabs/dragableObject/dragableTool.tscn" id="1_7ltas"]
 [ext_resource type="ArrayMesh" uid="uid://dybv6dhk04m5v" path="res://models/tapeRollerMesh.res" id="2_nsys7"]
 [ext_resource type="Script" path="res://prefabs/dragableObject/tape_roller.gd" id="2_s51pf"]
-[ext_resource type="Texture2D" uid="uid://df4s2lwb17gvc" path="res://models/melon_melon.png" id="3_pw1el"]
+[ext_resource type="Texture2D" uid="uid://bpri1kjlam7ry" path="res://textures/tape.png" id="4_fameo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_klnlf"]
 size = Vector3(0.42, 1, 1)
 
 [node name="tapeRoller" instance=ExtResource("1_7ltas")]
 script = ExtResource("2_s51pf")
+itemSize = 1
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_klnlf")
@@ -21,5 +22,6 @@ mesh = ExtResource("2_nsys7")
 [node name="Decal2" type="Decal" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 size = Vector3(0.22, 10, 10)
-texture_albedo = ExtResource("3_pw1el")
+texture_albedo = ExtResource("4_fameo")
+albedo_mix = 0.5
 cull_mask = 1047554
