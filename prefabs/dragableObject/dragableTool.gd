@@ -11,5 +11,15 @@ func _process(delta):
 	if Input.is_action_just_pressed	("use_tool"):
 		useTool()
 
+	if(position.y < -20):
+		onRemoved();
+		queue_free();
+
 func useTool():
 	pass
+
+func onRemoved():
+	var newTool = duplicate() as DragableTool;
+	get_parent().add_child(newTool);
+	newTool.initialPos = initialPos;
+	newTool.position = initialPos;

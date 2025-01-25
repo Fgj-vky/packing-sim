@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdbj04w7o66c7"]
 
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_61ujb"]
-[ext_resource type="ArrayMesh" uid="uid://cvwie1pd0k3hp" path="res://models/bubbleWrapModel.res" id="2_wfrer"]
+[ext_resource type="ArrayMesh" uid="uid://cvwie1pd0k3hp" path="res://models/bubblewrap/bubbleWrapModel.res" id="2_wfrer"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dxv1b"]
 size = Vector3(2.00391, 0.0703125, 1.97363)

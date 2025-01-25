@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cvrjesha1p2bt" path="res://prefabs/gameController/gameController.tscn" id="2_4ef7o"]
 [ext_resource type="PackedScene" uid="uid://c5e23mmpnagn" path="res://prefabs/itemConveyor/itemConveyor.tscn" id="2_nmwap"]
 [ext_resource type="PackedScene" uid="uid://n5simytednjc" path="res://prefabs/dragableObject/variations/book.tscn" id="3_38hv7"]
-[ext_resource type="PackedScene" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
-[ext_resource type="PackedScene" uid="uid://cx8gay6se77y1" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
+[ext_resource type="PackedScene" uid="uid://ce2oagjorwmtn" path="res://prefabs/dragableObject/variations/melon.tscn" id="4_hi6lm"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/tapeRoller.tscn" id="5_7xu1i"]
 [ext_resource type="PackedScene" uid="uid://4xadrga8nj80" path="res://prefabs/dragableObject/stamp.tscn" id="8_rbu15"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ny23k"]

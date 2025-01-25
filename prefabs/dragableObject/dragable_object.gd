@@ -14,14 +14,21 @@ var targetRotation = Quaternion.IDENTITY
 signal picked_up;
 signal released;
 
+var initialPos;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initialPos = position;
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var pos = global_position
 	shadowDecal.set_position(Vector3(pos.x, pos.y - 6, pos.z))
+
+	if(position.y < -20):
+		onRemoved();
+		queue_free();
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if dragging:
@@ -51,6 +58,9 @@ func _on_mouse_exited():
 		highlighted = false
 		var tween = get_tree().create_tween()
 		tween.tween_property(meshInstance, "scale", Vector3(1, 1, 1), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+
+func onRemoved():
+	pass
 
 func pickUp():
 	dragging = true;
