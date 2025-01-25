@@ -25,3 +25,5 @@ size = Vector3(0.22, 10, 10)
 texture_albedo = ExtResource("4_fameo")
 albedo_mix = 0.5
 cull_mask = 1047554
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]

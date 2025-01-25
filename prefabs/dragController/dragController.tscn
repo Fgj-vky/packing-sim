@@ -4,3 +4,5 @@
 
 [node name="DragController" type="Node"]
 script = ExtResource("1_pmkiw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
