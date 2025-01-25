@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://n1nijxawtqim"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_qe87g"]
+[ext_resource type="Script" path="res://lever_handle.gd" id="2_ia4vm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a02gb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1lpts"]
+
+[node name="Lever Handle" instance=ExtResource("1_qe87g")]
+script = ExtResource("2_ia4vm")
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CapsuleShape3D_a02gb")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("CapsuleMesh_1lpts")
+
+[node name="Decal" parent="." index="2"]
+texture_albedo = null
