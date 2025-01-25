@@ -1,13 +1,10 @@
 extends DragableTool
+class_name Stamp
 
-@onready var tapeDecal: Decal = $Decal2
+@onready var stampDecal: Decal = $Decal2
 @onready var audioPlayer: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @export var gameController: GameController
-var tapeSounds: Array[AudioStream] = [
-	preload("res://sounds/tape1.wav"),
-	preload("res://sounds/tape2.wav"),
-	preload("res://sounds/tape3.wav"),
-]
+var stampSound = preload("res://sounds/stamp.wav")
 
 func useTool():
 	if dragging:
@@ -36,27 +33,22 @@ func useTool():
 
 			# copy the tapeDecal to the object below
 			var newDecal = Decal.new()
-			newDecal.texture_albedo = tapeDecal.texture_albedo
-			newDecal.set_transform(tapeDecal.get_transform())
+			newDecal.texture_albedo = stampDecal.texture_albedo
+			newDecal.set_transform(stampDecal.get_transform())
 			objectBelowRoot.add_child(newDecal)
-			newDecal.global_position = tapeDecal.global_position
-			newDecal.size = tapeDecal.size
-			newDecal.global_rotation = tapeDecal.global_rotation
-			newDecal.scale = tapeDecal.scale / objectBelowRoot.scale
-			newDecal.cull_mask = tapeDecal.cull_mask
+			newDecal.global_position = stampDecal.global_position
+			newDecal.size = stampDecal.size
+			newDecal.global_rotation = stampDecal.global_rotation
+			newDecal.scale = stampDecal.scale / objectBelowRoot.scale
+			newDecal.cull_mask = stampDecal.cull_mask
 
 			# Move the tool down with impulse
-			var impulse = Vector3.DOWN * 100
+			var impulse = Vector3.DOWN * 150
 			# Add a bit of force relative to the rotation
-			var angle = self.global_rotation.y
-			impulse.x += sin(angle) * 100
-			impulse.z += cos(angle) * 100
-
 
 			self.apply_impulse(impulse)
-			playTapeSound()
+			playStampSound()
 
-func playTapeSound():
-	var randomAudio = tapeSounds[randi() % tapeSounds.size()]
-	audioPlayer.stream = randomAudio
+func playStampSound():
+	audioPlayer.stream = stampSound
 	audioPlayer.play()

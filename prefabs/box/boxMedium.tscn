@@ -74,10 +74,6 @@ orientation = 1
 transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 0)
 script = ExtResource("2_1h2tv")
 
-[node name="Skeleton3D" parent="box_m_rig" index="0"]
-bones/1/rotation = Quaternion(-2.41269e-07, -1.9296e-08, 0.707107, 0.707107)
-bones/2/rotation = Quaternion(-7.26811e-08, -1.49291e-07, -0.707107, 0.707107)
-
 [node name="box_m" parent="box_m_rig/Skeleton3D" index="0"]
 layers = 3
 
