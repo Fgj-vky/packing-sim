@@ -33,6 +33,9 @@ func _process(delta):
 		var acceleration = direction * min(max_accelaration, distance * 100)
 
 		currentDragObject.apply_force(acceleration)
+	if dragging and currentDragObject == null:
+		dragging = false
+		Input.set_custom_mouse_cursor(load("res://textures/Hand2.png"))
 
 
 func isFree() -> bool:
@@ -66,6 +69,8 @@ func _input(event):
 	elif event is InputEventMouseButton and !event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if dragging:
+				if currentDragObject == null:
+					return
 				dragging = false
 				currentDragObject.linear_damp = 0
 				currentDragObject.angular_damp = 0

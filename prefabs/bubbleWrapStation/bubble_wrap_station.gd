@@ -1,20 +1,36 @@
 extends Node3D
 
-@export var bubbleWrapScene: PackedScene;
+@onready var animationPlayer: AnimationPlayer = $"BubblewrapMachine/AnimationPlayer"
+var packedItemScen = preload("res://prefabs/dragableObject/dragableObject.tscn")
+@onready var spawnLocation: Node3D = $SpawnLocation
 
-var lastBubbleWrap: DragableObject;
+var currentItems: Array[DragableObject] = []
 
-func _ready():
-	spawnBubbleWrap();
-	pass
+func activate():
+	animationPlayer.play("Close")
+	await animationPlayer.animation_finished
+	var packedItems: Array[DragableObject] = []
+	for item in currentItems:
+		var packedItem = packedItemScen.instantiate()
+		packedItem.itemName = item.itemName
+		packedItem.itemSize = item.itemSize
+		packedItem.global_transform = item.global_transform
+		packedItems.append(packedItem)
+		item.onRemoved()	
+		item.queue_free()
+	for packedItem in packedItems:
+		get_parent().add_child(packedItem)	
+	animationPlayer.play_backwards("Close")
 
-func spawnBubbleWrap():
-	var bubbleWrap = bubbleWrapScene.instantiate() as DragableObject;
-	add_child(bubbleWrap);
-	bubbleWrap.picked_up.connect(onBubbleWrapTaken);
-	lastBubbleWrap = bubbleWrap;
-	pass
 
-func onBubbleWrapTaken():
-	lastBubbleWrap.picked_up.disconnect(onBubbleWrapTaken);
-	spawnBubbleWrap();
+func _on_area_3d_body_exited(body:Node3D):
+	if body is DragableObject:
+		currentItems.erase(body)
+
+func _on_area_3d_body_entered(body:Node3D):
+	if body is DragableObject:
+		currentItems.append(body)
+
+
+func _on_lever_on_lever_pulled():
+	activate()
