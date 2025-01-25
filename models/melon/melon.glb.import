@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4v141mmmsuwr"
-path="res://.godot/imported/boxpile_02.glb-b60cab09ed4409742097d39750190bea.scn"
+uid="uid://dikrsd578msmw"
+path="res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.scn"
 
 [deps]
 
-source_file="res://models/boxpile_02.glb"
-dest_files=["res://.godot/imported/boxpile_02.glb-b60cab09ed4409742097d39750190bea.scn"]
+source_file="res://models/melon/melon.glb"
+dest_files=["res://.godot/imported/melon.glb-e8968c08c924358a74524f0c76209fb1.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Boxpile02"
+nodes/root_name="Melon"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

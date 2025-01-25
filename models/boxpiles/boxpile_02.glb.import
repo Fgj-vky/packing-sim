@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhevp06hndxxn"
-path="res://.godot/imported/bubblewrap.glb-310222d843d51ee20a5454ed928f5b60.scn"
+uid="uid://c4v141mmmsuwr"
+path="res://.godot/imported/boxpile_02.glb-9c14cccc7028b2c482d7c68b745efef8.scn"
 
 [deps]
 
-source_file="res://models/bubblewrap.glb"
-dest_files=["res://.godot/imported/bubblewrap.glb-310222d843d51ee20a5454ed928f5b60.scn"]
+source_file="res://models/boxpiles/boxpile_02.glb"
+dest_files=["res://.godot/imported/boxpile_02.glb-9c14cccc7028b2c482d7c68b745efef8.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Boxpile02"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,15 +32,10 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
-"meshes": {
-"bubblewrap_Plane_001": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://models/bubbleWrapModel.res"
+"materials": {
+"box_s": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/box_s.tres"
 }
 }
 }

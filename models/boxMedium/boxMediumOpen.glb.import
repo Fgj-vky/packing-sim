@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xwh816ebdru0"
-path="res://.godot/imported/taperoller.glb-4e5d06aaeb0055c09f30be0a75a11765.scn"
+uid="uid://cn1dwr28fuib0"
+path="res://.godot/imported/boxMediumOpen.glb-1137e2fa903cacaf1585ea9e28c34b42.scn"
 
 [deps]
 
-source_file="res://models/taperoller.glb"
-dest_files=["res://.godot/imported/taperoller.glb-4e5d06aaeb0055c09f30be0a75a11765.scn"]
+source_file="res://models/boxMedium/boxMediumOpen.glb"
+dest_files=["res://.godot/imported/boxMediumOpen.glb-1137e2fa903cacaf1585ea9e28c34b42.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=4.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -31,18 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"taperoller_taperoller": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://models/tapeRollerMesh.res"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

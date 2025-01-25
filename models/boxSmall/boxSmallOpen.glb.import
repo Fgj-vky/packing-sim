@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cav2yndbgwaek"
-path="res://.godot/imported/box_s.glb-00a352f5e6961a5faca38eef2df1fcdd.scn"
+uid="uid://dl7ropnexixcj"
+path="res://.godot/imported/boxSmallOpen.glb-9eeeed6e1dd3e2b675f7a6a75ba1b442.scn"
 
 [deps]
 
-source_file="res://models/box_s.glb"
-dest_files=["res://.godot/imported/box_s.glb-00a352f5e6961a5faca38eef2df1fcdd.scn"]
+source_file="res://models/boxSmall/boxSmallOpen.glb"
+dest_files=["res://.godot/imported/boxSmallOpen.glb-9eeeed6e1dd3e2b675f7a6a75ba1b442.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="BoxS"
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

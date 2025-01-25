@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ac2feqbwiom"
-path="res://.godot/imported/box_s_box_s.png-5566be48955bfce67fa4bd4cc3e719b8.ctex"
+uid="uid://cylfkuxutxxhr"
+path="res://.godot/imported/bubblewrap_bubble.png-d019e05719b6c9eaf62576d414ea038c.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "37c797669441fcd583a1f13e49544154"
+"md5": "c10d15310b2a0da4cfc258d31f24e632"
 }
 
 [deps]
 
-source_file="res://models/box_s_box_s.png"
-dest_files=["res://.godot/imported/box_s_box_s.png-5566be48955bfce67fa4bd4cc3e719b8.ctex"]
+source_file="res://models/bubblewrap/bubblewrap_bubble.png"
+dest_files=["res://.godot/imported/bubblewrap_bubble.png-d019e05719b6c9eaf62576d414ea038c.ctex"]
 
 [params]
 

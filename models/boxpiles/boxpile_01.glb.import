@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cfqo3k3eu86qm"
-path="res://.godot/imported/boxpile_01.glb-5fcda4bc99959c5b578e15686a316453.scn"
+path="res://.godot/imported/boxpile_01.glb-6211c6c5147b61f2a1c43a2625877457.scn"
 
 [deps]
 
-source_file="res://models/boxpile_01.glb"
-dest_files=["res://.godot/imported/boxpile_01.glb-5fcda4bc99959c5b578e15686a316453.scn"]
+source_file="res://models/boxpiles/boxpile_01.glb"
+dest_files=["res://.godot/imported/boxpile_01.glb-6211c6c5147b61f2a1c43a2625877457.scn"]
 
 [params]
 
@@ -31,6 +31,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"box_m": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/box_m.tres"
+},
+"box_s": {
+"use_external/enabled": true,
+"use_external/path": "res://models/materials/box_s.tres"
+}
+}
+}
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=0

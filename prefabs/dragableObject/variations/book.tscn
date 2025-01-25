@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://n5simytednjc"]
 
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_mvcci"]
-[ext_resource type="ArrayMesh" uid="uid://d1hkkxnop5ltb" path="res://models/bookMesh.res" id="2_n2ciw"]
+[ext_resource type="ArrayMesh" uid="uid://d1hkkxnop5ltb" path="res://models/book/bookMesh.res" id="2_n2ciw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emojm"]
 size = Vector3(0.633057, 0.200684, 0.804443)
