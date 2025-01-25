@@ -1,8 +1,10 @@
 extends Node
 
 var day: int = 0;
+var boxes: int = 0;
 var boxScore: float = 0;
 var money: int = 0;
+var dailyExpenses = 100;
 
 func advanceDay():
     day+=1;
@@ -10,6 +12,7 @@ func advanceDay():
     boxScore = 0;
 
 func processBox(box: Box):
+    boxes += 1;
     if(box.fillAmount > 0):
         boxScore += box.fillPrecentage();
     else:
