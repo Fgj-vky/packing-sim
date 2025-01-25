@@ -10,6 +10,7 @@ var boxSPrefab = preload("res://prefabs/box/boxSmall.tscn")
 var boxMPrefab = preload("res://prefabs/box/boxMedium.tscn")
 
 @onready var dayTimer: Timer = $DayTimer;
+@export_file var dayChangeScene: String;
 
 func createNewSBox():
 	createNewBox(boxSPrefab)
@@ -21,7 +22,7 @@ func createNewBox(boxScene: PackedScene):
 	if currentBoxObject != null:
 		return
 	var box = boxScene.instantiate() as Node3D
-	get_tree().get_root().add_child(box)
+	get_parent().add_child(box)
 	box.global_position = boxExitLocation.global_position
 	currentBoxObject = box
 	uiLayer.setCurrentBoxObject(currentBoxObject)
@@ -59,8 +60,8 @@ func sendBoxAway():
 	uiLayer.setCurrentBoxObject(null)
 
 func endDay():
-	#await uiLayer.fadeToBlack();
-	print("scene change")
+	await uiLayer.fadeToBlack();
+	get_tree().change_scene_to_file(dayChangeScene);
 	pass
 
 # Called when the node enters the scene tree for the first time.

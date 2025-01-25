@@ -26,6 +26,7 @@ func open():
 	isOpen = true;
 
 func close():
+	var fill = fillAmount;
 	animPlayer.play_backwards("Open");
 	if(itemsInTheBox.size() > 0):
 		await get_tree().create_timer(0.1).timeout
@@ -35,6 +36,7 @@ func close():
 			pass
 	await animPlayer.animation_finished;
 	isOpen = false;
+	fillAmount = fill;
 
 func onObjectEntered(body: Node3D):
 	if(body is not DragableObject):

@@ -8,10 +8,12 @@ var dailyExpenses = 100;
 
 func advanceDay():
     day+=1;
-    money += boxScore * 10;
+    money += max(10 * ProgressController.boxScore, 0);
     boxScore = 0;
+    boxes = 0;
 
 func processBox(box: Box):
+    print(box.fillAmount)
     boxes += 1;
     if(box.fillAmount > 0):
         boxScore += box.fillPrecentage();
