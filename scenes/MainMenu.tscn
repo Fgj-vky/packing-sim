@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=13 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dix01fo1c2uci" path="res://models/room/tableMesh.res" id="5_ldx4d"]
 [ext_resource type="PackedScene" uid="uid://cml5cbtxvn21c" path="res://prefabs/box/boxSmall.tscn" id="6_h5wdt"]
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
+[ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jya2"]
 size = Vector3(8.66577, 0.521118, 4.66174)
@@ -20,6 +21,13 @@ fog_density = 0.1215
 fog_height = -6.2
 fog_height_density = 0.0515
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1m53"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_ctmcp")
 gameScene = "res://scenes/ItemDragScene.tscn"
@@ -29,21 +37,30 @@ transform = Transform3D(1, 0, 0, 0, 0.514679, 0.857383, 0, -0.857383, 0.514679, 
 fov = 45.0
 
 [node name="BoxS" parent="." instance=ExtResource("6_h5wdt")]
-transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, -0.471868, -2.67373, -5.8832)
+transform = Transform3D(-1.96701e-07, 0, -4.5, 0, 4.5, 0, 4.5, 0, -1.96701e-07, -0.471868, -2.67373, -6.50807)
+
+[node name="Skeleton3D" parent="BoxS/box_s_rig" index="0"]
+bones/1/rotation = Quaternion(-1.9528e-07, 2.66925e-08, 0.707107, 0.707107)
+bones/2/rotation = Quaternion(-2.66925e-08, -1.9528e-07, -0.707107, 0.707107)
+bones/3/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/4/rotation = Quaternion(0.5, 0.5, -0.5, -0.5)
 
 [node name="AnimationPlayer" parent="BoxS" index="1"]
 autoplay = "Open"
 
+[node name="ClosingParticles" parent="BoxS" index="4"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0, 0.262748, 0)
+
 [node name="Start" parent="." instance=ExtResource("7_7ojjp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63253, -1.91703, -8.86377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63253, -1.91703, -9.48864)
 itemName = "Start"
 
 [node name="End" parent="." instance=ExtResource("7_7ojjp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -8.86377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -9.48864)
 itemName = "End"
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.463213, -2.67373, -6.83676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.463213, -2.67373, -7.46163)
 freeze = true
 
 [node name="TableMesh" type="MeshInstance3D" parent="RigidBody3D"]
@@ -94,5 +111,75 @@ transform = Transform3D(-2.30989, 0, -3.26564, 0, 4, 0, 3.26564, 0, -2.30989, 3.
 
 [node name="Boxpile03" parent="env" instance=ExtResource("4_3v81e")]
 transform = Transform3D(2.23353, 0, -3.31833, 0, 4, 0, 3.31833, 0, 2.23353, -4.54474, -4.41746, -12.0739)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("9_wssul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1m53")
+text = "Atte Saari"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1m53")
+text = "Lauri Lyytikäinen"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_y1m53")
+text = "Jaakko Sukuvaara
+"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -91.0
+offset_right = 62.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mady By:"
 
 [editable path="BoxS"]
