@@ -69,7 +69,6 @@ func sendBoxAway():
 		tried_to_close_full_box.emit();
 		return;
 	if currentBoxObject.isOpen:
-		uiLayer.hideBoxFillDisplay()
 		await currentBoxObject.close()
 	var boxTween = get_tree().create_tween()
 	audioPlayer.stream = boxSendAudio
