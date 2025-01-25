@@ -82,7 +82,6 @@ func sendBoxAway():
 	currentBoxObject.fill_amount_changed.emit(0);
 	currentBoxObject.queue_free()
 	currentBoxObject = null
-	uiLayer.setCurrentBoxObject(null)
 	currentOrder = []
 	createNewOrder()
 
