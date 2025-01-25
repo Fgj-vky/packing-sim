@@ -7,6 +7,10 @@ extends Control
 @export var savingsLabel: Label
 @export var totalLabel: Label
 
+@export var continueGroup: Control;
+@export var bankruptLabel: Control;
+@export var bankruptButton: Control;
+
 @export_file var gameScene: String;
 
 func _ready():
@@ -22,6 +26,12 @@ func _ready():
 	expensesLabel.text = str(ProgressController.dailyExpenses);
 	savingsLabel.text = str(ProgressController.money);
 	totalLabel.text = str(total);
+
+	if(total < 0):
+		continueGroup.queue_free();
+	else:
+		bankruptLabel.queue_free();
+		bankruptButton.queue_free();
 	pass
 
 

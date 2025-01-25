@@ -17,6 +17,8 @@ func _process(delta):
 	timer -= delta;
 	if(timer <= 0 && children.size() > 0):
 		timer = revealRate;
-		var child = children.pop_front() as Node;
+		var child = children.pop_front();
+		if(!child):
+			return;
 		child.visible = true;
 	pass

@@ -6,7 +6,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a3rih"]
 
-[node name="DayChangeScene" type="Control" node_paths=PackedStringArray("boxesLabel", "boxScroreLabel", "moneyEarnedLable", "expensesLabel", "savingsLabel", "totalLabel")]
+[node name="DayChangeScene" type="Control" node_paths=PackedStringArray("boxesLabel", "boxScroreLabel", "moneyEarnedLable", "expensesLabel", "savingsLabel", "totalLabel", "continueGroup", "bankruptLabel", "bankruptButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +21,9 @@ moneyEarnedLable = NodePath("VBoxContainer/VBoxContainer/HBoxContainer3/Label2")
 expensesLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer4/Label2")
 savingsLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer5/Label2")
 totalLabel = NodePath("VBoxContainer/VBoxContainer/HBoxContainer6/Label2")
+continueGroup = NodePath("VBoxContainer/VBoxContainer/HBoxContainer7")
+bankruptLabel = NodePath("VBoxContainer/VBoxContainer/Label")
+bankruptButton = NodePath("VBoxContainer/VBoxContainer/QuitButton")
 gameScene = "res://scenes/ItemDragScene.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -162,5 +165,16 @@ size_flags_horizontal = 3
 text = "Resume
 "
 
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "You are bankrupt"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit"
+
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer7/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer7/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
