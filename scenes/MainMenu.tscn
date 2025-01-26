@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=18 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
@@ -6,13 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://c4v141mmmsuwr" path="res://models/boxpiles/boxpile_02.glb" id="3_86jcp"]
 [ext_resource type="PackedScene" uid="uid://wgatucg5k1o4" path="res://models/boxpiles/boxpile_03.glb" id="4_3v81e"]
 [ext_resource type="Script" path="res://scenes/main_menu_item.gd" id="4_jyyct"]
+[ext_resource type="ArrayMesh" uid="uid://bcyflmas8e5n2" path="res://models/menubuttons/startButtonMesh.res" id="5_8xse2"]
 [ext_resource type="ArrayMesh" uid="uid://dix01fo1c2uci" path="res://models/room/tableMesh.res" id="5_ldx4d"]
 [ext_resource type="PackedScene" uid="uid://cml5cbtxvn21c" path="res://prefabs/box/boxSmall.tscn" id="6_h5wdt"]
+[ext_resource type="ArrayMesh" uid="uid://yvbfau5k2and" path="res://models/menubuttons/quitButtonMesh.res" id="6_l7say"]
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltac2"]
+size = Vector3(2.46497, 0.330933, 0.588867)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jya2"]
 size = Vector3(8.66577, 0.521118, 4.66174)
@@ -55,11 +60,24 @@ physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("4_jyyct")
 itemName = "Start"
 
+[node name="CollisionShape3D" parent="Start" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0234985, 0.16156, 0)
+shape = SubResource("BoxShape3D_ltac2")
+
+[node name="MeshInstance3D" parent="Start" index="1"]
+mesh = ExtResource("5_8xse2")
+
 [node name="End" parent="." instance=ExtResource("7_7ojjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.932146, -1.91703, -9.48864)
 physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("4_jyyct")
 itemName = "End"
+
+[node name="CollisionShape3D" parent="End" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153917, 0)
+
+[node name="MeshInstance3D" parent="End" index="1"]
+mesh = ExtResource("6_l7say")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.463213, -2.67373, -7.46163)
@@ -187,3 +205,5 @@ grow_vertical = 0
 text = "Mady By:"
 
 [editable path="BoxS"]
+[editable path="Start"]
+[editable path="End"]
