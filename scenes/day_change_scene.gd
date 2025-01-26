@@ -12,7 +12,7 @@ extends Control
 @export var bankruptButton: Control;
 
 @export_file var gameScene: String;
-@export_file(var mainMenuScene: String;
+@export_file var mainMenuScene: String;
 
 func _ready():
 	var moneyEarned = max(10 * ProgressController.boxScore, 0) as int;

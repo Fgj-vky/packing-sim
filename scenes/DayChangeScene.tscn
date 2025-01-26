@@ -25,6 +25,7 @@ continueGroup = NodePath("VBoxContainer/VBoxContainer/HBoxContainer7")
 bankruptLabel = NodePath("VBoxContainer/VBoxContainer/Label")
 bankruptButton = NodePath("VBoxContainer/VBoxContainer/QuitButton")
 gameScene = "res://scenes/ItemDragScene.tscn"
+mainMenuScene = "res://scenes/MainMenu.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 0.713726)

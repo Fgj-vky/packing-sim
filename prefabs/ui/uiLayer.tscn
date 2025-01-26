@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3cqrd5mkwyjx"]
+[gd_scene load_steps=6 format=3 uid="uid://d3cqrd5mkwyjx"]
 
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="1_65tvp"]
 [ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
@@ -8,6 +8,13 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s0qfu"]
 gradient = SubResource("Gradient_saae1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr2wx"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="UiLayer" type="Control"]
 layout_mode = 3
@@ -19,6 +26,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_65tvp")
 script = ExtResource("1_ixsxp")
+mainMenuScene = "res://scenes/MainMenu.tscn"
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -130,7 +138,76 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_s0qfu")
 
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="TextureRect" parent="Menu"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = SubResource("GradientTexture1D_s0qfu")
+
+[node name="Panel" type="Panel" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -105.0
+offset_right = 138.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr2wx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Menu/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Menu/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Menu/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Quit
+"
+
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/sendButton" to="." method="_on_send_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/closeButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Menu/Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
