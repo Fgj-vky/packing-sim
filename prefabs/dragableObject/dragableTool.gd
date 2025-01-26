@@ -1,6 +1,8 @@
 extends DragableObject
 class_name DragableTool
 
+@onready var keyPromp = $KeyPrompt
+
 func _process(delta):
 	var pos = global_position
 	shadowDecal.set_position(Vector3(pos.x, pos.y - 6, pos.z))
@@ -23,3 +25,12 @@ func onRemoved():
 	get_parent().add_child(newTool);
 	newTool.initialPos = initialPos;
 	newTool.position = initialPos;
+
+func pickUp():
+	keyPromp.visible = true;
+	super();
+	pass
+func release():
+	keyPromp.visible = false;
+	super();
+	pass

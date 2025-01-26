@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhb0shfwlj13b"]
+[gd_scene load_steps=7 format=3 uid="uid://dhb0shfwlj13b"]
 
 [ext_resource type="Script" path="res://prefabs/bubbleWrapStation/bubble_wrap_station.gd" id="1_rj55j"]
 [ext_resource type="PackedScene" uid="uid://dh8b0we4jvabo" path="res://models/bubblewrapMachine/bubblewrapMachine.glb" id="2_wuh8y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qhlg"]
 size = Vector3(2.06934, 1.32922, 2.42719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3cnes"]
+size = Vector3(0.126709, 3.9364, 2.5979)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f4jla"]
 size = Vector3(0.092, 1.555, 2.437)
@@ -34,8 +37,8 @@ shape = SubResource("BoxShape3D_4qhlg")
 freeze = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14619, 0.775757, 0.0288696)
-shape = SubResource("BoxShape3D_f4jla")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14704, 1.96759, 0.0288696)
+shape = SubResource("BoxShape3D_3cnes")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05017, 0.775757, 0.0288696)
