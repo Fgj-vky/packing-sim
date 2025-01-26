@@ -18,7 +18,7 @@ signal tried_to_close_full_box();
 @export_file var dayChangeScene: String;
 
 var currentOrder: Array[String] = []
-var availableItems = ["melon", "book", "vase", "fish"]
+var availableItems = ["melon", "book", "vase", "fish", "gpu", "mug"]
 @export var printer: Printer
 
 func createNewOrder():
