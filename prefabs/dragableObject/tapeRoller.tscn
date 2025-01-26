@@ -10,7 +10,6 @@ size = Vector3(0.42, 1, 1)
 
 [node name="tapeRoller" instance=ExtResource("1_7ltas")]
 script = ExtResource("2_s51pf")
-itemSize = 1
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("BoxShape3D_klnlf")
