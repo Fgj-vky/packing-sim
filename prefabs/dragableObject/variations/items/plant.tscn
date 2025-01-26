@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh53ldogxwovp"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_xyx2o"]
+[ext_resource type="ArrayMesh" uid="uid://2ncvt67pu5lf" path="res://models/plant/plantMesh.res" id="2_hnbr1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_k46ng"]
+points = PackedVector3Array(-0.706702, 0.843314, -0.000138342, -0.499727, 0.843314, -0.499727, -0.306726, 0, -0.306726, -0.433733, 0, -0.000138342, -0.306726, 0, 0.306588, -0.499727, 0.843314, 0.499589, -0.706702, 0.980257, -0.000138342, -0.000138342, 0.843314, -0.706702, -0.499727, 0.980257, -0.499727, -0.000138342, 0, -0.433733, -0.000138342, 0, 0.433595, -0.000138342, 0.843314, 0.706702, -0.499727, 0.980257, 0.499589, -0.482571, 2.02336, -0.252907, 0.499589, 0.843314, -0.499727, 0.306588, 0, -0.306726, -0.000138342, 0.980257, -0.706702, 0.306588, 0, 0.306588, 0.499589, 0.843314, 0.499589, -0.000138342, 0.980257, 0.706702, 0.490043, 1.95839, 0.468183, 0.412289, 2.09831, 0.341729, -0.337025, 2.14905, -0.185115, 0.706702, 0.843314, -0.000138342, 0.499589, 0.980257, -0.499727, 0.433595, 0, -0.000138342, 0.212232, 1.69045, -0.221363, 0.499589, 0.980257, 0.499589, 0.706702, 0.980257, -0.000138342, 0.26273, 2.14247, 0.153156, -0.115247, 2.16901, -0.0835646)
+
+[node name="DragableObject2" instance=ExtResource("1_xyx2o")]
+itemName = "plant"
+fragile = true
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("ConvexPolygonShape3D_k46ng")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = ExtResource("2_hnbr1")
