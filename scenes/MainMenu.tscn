@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=20 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://yvbfau5k2and" path="res://models/menubuttons/quitButtonMesh.res" id="6_l7say"]
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
+[ext_resource type="Texture2D" uid="uid://m1cv81g5jgq7" path="res://textures/title.png" id="13_gjuyj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
@@ -36,6 +37,15 @@ content_margin_right = 10.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 expand_margin_left = 2.0
 expand_margin_right = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kmce"]
+transparency = 1
+disable_fog = true
+albedo_texture = ExtResource("13_gjuyj")
+texture_filter = 0
+texture_repeat = false
+billboard_mode = 1
+billboard_keep_scale = true
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_ctmcp")
@@ -203,6 +213,15 @@ offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Made By:"
+
+[node name="Title" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.254792, 0.955037, -11.0467)
+material_override = SubResource("StandardMaterial3D_8kmce")
+cast_shadow = 0
+billboard = 1
+double_sided = false
+texture_filter = 0
+texture = ExtResource("13_gjuyj")
 
 [editable path="BoxS"]
 [editable path="Start"]
