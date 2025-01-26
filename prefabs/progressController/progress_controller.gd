@@ -3,16 +3,17 @@ extends Node
 var day: int = 0;
 var boxes: int = 0;
 var boxScore: float = 0;
-var money: int = 0;
+var money: int = 50;
 var dailyExpenses = 100;
 
 var ui: UiController
 
 func advanceDay():
 	day+=1;
-	money += max(10 * ProgressController.boxScore, 0);
+	money += max(3 * ProgressController.boxScore, 0);
 	boxScore = 0;
 	boxes = 0;
+	dailyExpenses += 10;
 
 func processBox(box: Box, order: Array[String]):
 	print(box.fillAmount)
