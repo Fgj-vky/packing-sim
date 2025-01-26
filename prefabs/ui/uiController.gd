@@ -6,10 +6,13 @@ class_name UiController
 @onready var fade: TextureRect = $Fade;
 @onready var orderList: VBoxContainer = $Panel2/MarginContainer/VBoxContainer/orderLabels
 @onready var menu = $Menu;
+@onready var errorList: VBoxContainer = $Panel3/MarginContainer/VBoxContainer/errors
+@onready var errorPanel = $Panel3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fade.modulate = Color.TRANSPARENT;
+	ProgressController.ui = self;
 	pass # Replace with function body.
 
 
@@ -26,7 +29,25 @@ func updateOrderDisplay(orders: Array[String]):
 		label.text = "- " + order.capitalize()
 		orderList.add_child(label)
 
+func updateErrorDisplay(errors: Array[String]):
+	for n in errorList.get_children():
+		errorList.remove_child(n)
+		n.queue_free()
 
+	if errors.size() == 0:
+		return
+
+		
+
+	for error in errors:
+		var label = Label.new()
+		label.text = "- " + error.capitalize()
+		errorList.add_child(label)
+	errorPanel.visible = errors.size() > 0
+	# show error panel for 3 seconds
+	if errors.size() > 0:
+		await get_tree().create_timer(3).timeout
+		errorPanel.visible = false
 
 
 func _on_close_button_pressed():

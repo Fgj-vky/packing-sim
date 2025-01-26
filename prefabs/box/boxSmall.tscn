@@ -80,6 +80,7 @@ orientation = 1
 [node name="BoxS" node_paths=PackedStringArray("flapColliders", "topCollider") instance=ExtResource("1_6nsel")]
 transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, 0, 0, 0)
 script = ExtResource("2_yk7ld")
+containerSize = 2
 flapColliders = [NodePath("BoxCollider/CollisionShape3D"), NodePath("BoxCollider/CollisionShape3D2"), NodePath("BoxCollider/CollisionShape3D15"), NodePath("BoxCollider/CollisionShape3D16")]
 topCollider = NodePath("BoxCollider/Top")
 

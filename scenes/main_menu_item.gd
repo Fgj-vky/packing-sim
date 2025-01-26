@@ -8,5 +8,6 @@ func onRemoved():
 		return;
 	var newObjetct = duplicate() as DragableObject;
 	get_parent().add_child(newObjetct);
+	newObjetct.itemName = itemName;
 	newObjetct.initialPos = initialPos;
 	newObjetct.position = initialPos;

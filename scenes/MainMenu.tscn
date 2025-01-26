@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dc58g3v7ihbg8"]
+[gd_scene load_steps=21 format=3 uid="uid://dc58g3v7ihbg8"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_ctmcp"]
 [ext_resource type="ArrayMesh" uid="uid://0o0vu5a6uys4" path="res://models/room/floorMesh.res" id="1_muglu"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
 [ext_resource type="Texture2D" uid="uid://m1cv81g5jgq7" path="res://textures/title.png" id="13_gjuyj"]
+[ext_resource type="FontFile" uid="uid://cstaee1jx6f7m" path="res://PressStart2P-Regular.ttf" id="13_s2ptx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
@@ -163,15 +164,18 @@ anchor_bottom = 1.0
 offset_top = -12.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_wssul")
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 5
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme = ExtResource("9_wssul")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("13_s2ptx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y1m53")
 text = "Atte Saari"
 horizontal_alignment = 1
@@ -179,7 +183,8 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 5
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme = ExtResource("9_wssul")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 3
@@ -190,7 +195,7 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="Control/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 5
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 3
@@ -212,6 +217,7 @@ offset_right = 62.0
 offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Made By:"
 
 [node name="Title" type="Sprite3D" parent="."]
