@@ -53,6 +53,7 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 theme_override_font_sizes/font_size = 50
 text = "Day 0"
 horizontal_alignment = 1
@@ -66,11 +67,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Boxes Processed :"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "30"
 horizontal_alignment = 2
 
@@ -79,11 +82,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Avarage Box Score:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "75 / 100"
 horizontal_alignment = 2
 
@@ -96,11 +101,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Money Earned:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "$200"
 horizontal_alignment = 2
 
@@ -109,11 +116,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Expenses:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "$150"
 horizontal_alignment = 2
 
@@ -122,11 +131,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Savings:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "$150"
 horizontal_alignment = 2
 
@@ -139,11 +150,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "Total:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "$200"
 horizontal_alignment = 2
 
@@ -168,6 +181,7 @@ text = "Resume
 
 [node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.780392, 0.780392, 0.780392, 1)
 text = "You are bankrupt"
 horizontal_alignment = 1
 
