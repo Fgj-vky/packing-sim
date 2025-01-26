@@ -119,13 +119,13 @@ text = "Create small Box [1]"
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
-text = "Send box [Backspace]"
+text = "Send box [D]"
 
 [node name="closeButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
-text = "Close Box [Enter]"
+text = "Close Box [A]"
 
 [node name="Fade" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)

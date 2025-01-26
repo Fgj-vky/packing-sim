@@ -14,7 +14,7 @@ func itemPutIntoBox(amount):
 		return;
 	var item = box.itemsInTheBox[0] as MainMenuItem;
 	item.respawn = false;
-	if(item.name == "Start"):
+	if(item.itemName == "Start"):
 		await box.close();
 		var tween = box.create_tween();
 		await tween.tween_property(box, "global_position", box.global_position - Vector3(15, 0,0), 0.3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING).finished

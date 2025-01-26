@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="7_7ojjp"]
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="9_wssul"]
 [ext_resource type="Texture2D" uid="uid://m1cv81g5jgq7" path="res://textures/title.png" id="13_gjuyj"]
-[ext_resource type="FontFile" uid="uid://d3cxxth37lg73" path="res://PressStart2P-Regular.ttf" id="13_s2ptx"]
+[ext_resource type="FontFile" uid="uid://cstaee1jx6f7m" path="res://PressStart2P-Regular.ttf" id="13_s2ptx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
