@@ -1,7 +1,10 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b3jclvi0d36mf"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b3jclvi0d36mf"]
 
 [ext_resource type="Texture2D" uid="uid://dhx7m2cdd3y14" path="res://materials/bubblewrap.png" id="1_m6cam"]
+[ext_resource type="Texture2D" uid="uid://exjmysakv8ut" path="res://materials/bubblewrap_n.png" id="2_78pys"]
 
 [resource]
 albedo_texture = ExtResource("1_m6cam")
+normal_enabled = true
+normal_texture = ExtResource("2_78pys")
 texture_filter = 0
