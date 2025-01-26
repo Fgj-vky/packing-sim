@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=30 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
@@ -19,9 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://bdb8sgnepesjd" path="res://prefabs/dragableObject/variations/items/mug.tscn" id="10_nm5qk"]
 [ext_resource type="PackedScene" uid="uid://cvjky7um08ynn" path="res://prefabs/dragableObject/variations/wrapped/wrappedCube.tscn" id="10_sc1ch"]
 [ext_resource type="PackedScene" uid="uid://bj7f46cpecyer" path="res://prefabs/dragableObject/variations/wrapped/wrappedSphere.tscn" id="11_1t58m"]
-[ext_resource type="PackedScene" path="res://prefabs/dragableObject/variations/items/plant.tscn" id="11_m3wyt"]
+[ext_resource type="PackedScene" uid="uid://bh53ldogxwovp" path="res://prefabs/dragableObject/variations/items/plant.tscn" id="11_m3wyt"]
 [ext_resource type="PackedScene" uid="uid://daqw46o7yikq5" path="res://prefabs/scale/scale.tscn" id="11_o0jds"]
 [ext_resource type="PackedScene" uid="uid://c7nqiv6f5qxaq" path="res://prefabs/lever/lever.tscn" id="12_5vplb"]
+[ext_resource type="PackedScene" uid="uid://btluxgjxjnjwb" path="res://prefabs/dragableObject/variations/items/lamp.tscn" id="12_tc8pq"]
 [ext_resource type="PackedScene" uid="uid://dyo55vh4xa6t7" path="res://prefabs/dragableObject/variations/wrapped/wrappedVase.tscn" id="13_p8p6y"]
 [ext_resource type="PackedScene" uid="uid://cfqo3k3eu86qm" path="res://models/boxpiles/boxpile_01.glb" id="20_m7wd0"]
 [ext_resource type="PackedScene" uid="uid://c4v141mmmsuwr" path="res://models/boxpiles/boxpile_02.glb" id="21_rpx4f"]
@@ -74,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.5336
 
 [node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190714, 0.05, -6.30688)
-items = Array[PackedScene]([ExtResource("3_38hv7"), ExtResource("4_hi6lm"), ExtResource("7_5rown"), ExtResource("8_1ayur"), ExtResource("9_e6mw7"), ExtResource("10_nm5qk"), ExtResource("11_m3wyt")])
+items = Array[PackedScene]([ExtResource("3_38hv7"), ExtResource("4_hi6lm"), ExtResource("7_5rown"), ExtResource("8_1ayur"), ExtResource("9_e6mw7"), ExtResource("10_nm5qk"), ExtResource("11_m3wyt"), ExtResource("12_tc8pq")])
 
 [node name="GameController" parent="." node_paths=PackedStringArray("boxLocation", "boxExitLocation", "uiLayer", "printer") instance=ExtResource("2_4ef7o")]
 boxLocation = NodePath("BoxPosition")
