@@ -11,6 +11,7 @@ var targetRotation = Quaternion.IDENTITY
 
 @export var itemSize: int = 1
 @export var itemName = ""
+@export var fragile = false
 
 signal picked_up;
 signal released;
@@ -71,4 +72,5 @@ func pickUp():
 func release():
 	dragging = false;
 	released.emit();
+	sleeping = false
 	pass

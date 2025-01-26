@@ -86,7 +86,7 @@ transform = Transform3D(0.98682, 0.0555052, -0.152003, -0.0440655, 0.996009, 0.0
 transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, -0.0517938, 0.231695, 0.180603)
 
 [node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.06589, 0, 0.404879)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.18302, 0.0411177, 0.376326)
 wrappedItemScenes = Array[PackedScene]([ExtResource("9_emt8h"), ExtResource("10_sc1ch"), ExtResource("11_1t58m"), ExtResource("13_p8p6y")])
 
 [node name="tapeRoller" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("5_7xu1i")]
