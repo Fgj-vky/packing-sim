@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3cqrd5mkwyjx"]
+[gd_scene load_steps=6 format=3 uid="uid://d3cqrd5mkwyjx"]
 
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="1_65tvp"]
 [ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
+[ext_resource type="AudioStream" uid="uid://bk872m3jasl6x" path="res://sounds/printer2.wav" id="3_xk1s3"]
 
 [sub_resource type="Gradient" id="Gradient_saae1"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -217,12 +218,11 @@ text = "Quit
 "
 
 [node name="Panel3" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 752.0
-offset_top = -47.0
+offset_top = -87.0
 offset_right = -631.0
 offset_bottom = 268.0
 grow_horizontal = 2
@@ -233,7 +233,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 35.0
+offset_top = 79.0
 offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
@@ -264,6 +264,9 @@ text = "- Item 1"
 [node name="Label2" type="Label" parent="Panel3/MarginContainer/VBoxContainer/errors"]
 layout_mode = 2
 text = "- Item 2"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xk1s3")
 
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/mButton" to="." method="_on_m_button_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VBoxContainer/sButton" to="." method="_on_s_button_pressed"]
