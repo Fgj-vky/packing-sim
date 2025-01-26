@@ -46,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 0.514679, 0.857383, 0, -0.857383, 0.514679, 
 fov = 45.0
 
 [node name="BoxS" parent="." instance=ExtResource("6_h5wdt")]
-transform = Transform3D(-1.96701e-07, 0, -4.5, 0, 4.5, 0, 4.5, 0, -1.96701e-07, -0.471868, -2.67373, -6.50807)
+transform = Transform3D(-2.40413e-07, 0, -5.5, 0, 5.5, 0, 5.5, 0, -2.40413e-07, -0.471868, -2.67373, -6.50807)
 
 [node name="AnimationPlayer" parent="BoxS" index="1"]
 autoplay = "Open"

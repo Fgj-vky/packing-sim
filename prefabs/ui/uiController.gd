@@ -2,9 +2,10 @@ extends Control
 class_name UiController
 
 @export var gameController: GameController
+@export_file var mainMenuScene: String;
 @onready var fade: TextureRect = $Fade;
 @onready var orderList: VBoxContainer = $Panel2/MarginContainer/VBoxContainer/orderLabels
-
+@onready var menu = $Menu;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,3 +45,17 @@ func fadeToBlack():
 	var tween = fade.create_tween();
 	tween.tween_property(fade, "modulate", Color.WHITE, 1);
 	await tween.finished;
+
+func _on_quit_pressed():
+	get_tree().change_scene_to_file(mainMenuScene);
+
+func _on_resume_pressed():
+		menu.visible = false;
+		
+func _input(event):
+	if (event.is_action_pressed("pause")):
+		menu.visible = !menu.visible;
+		pass
+
+
+

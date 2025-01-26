@@ -12,6 +12,7 @@ extends Control
 @export var bankruptButton: Control;
 
 @export_file var gameScene: String;
+@export_file var mainMenuScene: String;
 
 func _ready():
 	var moneyEarned = max(10 * ProgressController.boxScore, 0) as int;
@@ -41,5 +42,5 @@ func _on_resume_button_pressed():
 	pass # Replace with function body.
 
 func _on_quit_button_pressed():
-	get_tree().quit();
+	get_tree().change_scene_to_file(mainMenuScene);
 	pass # Replace with function body.
