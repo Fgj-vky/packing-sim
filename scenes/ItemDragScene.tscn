@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=29 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bdb8sgnepesjd" path="res://prefabs/dragableObject/variations/items/mug.tscn" id="10_nm5qk"]
 [ext_resource type="PackedScene" uid="uid://cvjky7um08ynn" path="res://prefabs/dragableObject/variations/wrapped/wrappedCube.tscn" id="10_sc1ch"]
 [ext_resource type="PackedScene" uid="uid://bj7f46cpecyer" path="res://prefabs/dragableObject/variations/wrapped/wrappedSphere.tscn" id="11_1t58m"]
+[ext_resource type="PackedScene" uid="uid://bh53ldogxwovp" path="res://prefabs/dragableObject/variations/items/plant.tscn" id="11_m3wyt"]
 [ext_resource type="PackedScene" uid="uid://daqw46o7yikq5" path="res://prefabs/scale/scale.tscn" id="11_o0jds"]
 [ext_resource type="PackedScene" uid="uid://c7nqiv6f5qxaq" path="res://prefabs/lever/lever.tscn" id="12_5vplb"]
 [ext_resource type="PackedScene" uid="uid://dyo55vh4xa6t7" path="res://prefabs/dragableObject/variations/wrapped/wrappedVase.tscn" id="13_p8p6y"]
@@ -73,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.49012e-08, 0, 1.49012e-08, 1, 0, 0.5336
 
 [node name="ItemConveyor" parent="." instance=ExtResource("2_nmwap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190714, 0.05, -6.30688)
-items = Array[PackedScene]([ExtResource("3_38hv7"), ExtResource("4_hi6lm"), ExtResource("7_5rown"), ExtResource("8_1ayur"), ExtResource("9_e6mw7"), ExtResource("10_nm5qk")])
+items = Array[PackedScene]([ExtResource("3_38hv7"), ExtResource("4_hi6lm"), ExtResource("7_5rown"), ExtResource("8_1ayur"), ExtResource("9_e6mw7"), ExtResource("10_nm5qk"), ExtResource("11_m3wyt")])
 
 [node name="GameController" parent="." node_paths=PackedStringArray("boxLocation", "boxExitLocation", "uiLayer", "printer") instance=ExtResource("2_4ef7o")]
 boxLocation = NodePath("BoxPosition")
@@ -88,7 +89,7 @@ transform = Transform3D(0.98682, 0.0555052, -0.152003, -0.0440655, 0.996009, 0.0
 transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.0379959, 0.0776988, -0.0360617, 0.996324, -0.0517938, 0.231695, 0.180603)
 
 [node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.18302, 0.0411177, 0.376326)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.71308, 0.0411177, 0.376326)
 wrappedItemScenes = Array[PackedScene]([ExtResource("9_emt8h"), ExtResource("10_sc1ch"), ExtResource("11_1t58m"), ExtResource("13_p8p6y")])
 
 [node name="tapeRoller" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("5_7xu1i")]
@@ -111,7 +112,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0140
 gameController = NodePath("../GameController")
 
 [node name="Lever" parent="." instance=ExtResource("12_5vplb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3777, 0.483032, 2.96828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90776, 0.483032, 2.96828)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.438353, 0.539433, -0.718929, 0.810369, 0.108786, 0.575732, 0.388778, -0.834972, -0.389453, -12.8413, 6.66782, -6.52792)
