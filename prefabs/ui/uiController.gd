@@ -9,7 +9,7 @@ class_name UiController
 @onready var errorList: VBoxContainer = $Panel3/MarginContainer/VBoxContainer/errors
 @onready var errorPanel = $Panel3
 @onready var errorPanelInitialPos = errorPanel.position
-var panelOffScreenPos = Vector2(0, -300)
+var panelOffScreenPos = Vector2(0, -400)
 var errorTween1: Tween
 var errorTween2: Tween
 @onready var audioPlayer: AudioStreamPlayer = $AudioStreamPlayer
