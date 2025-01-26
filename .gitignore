@@ -16,3 +16,6 @@ mono_crash.*.json
 
 .DS_Store
 .vscode
+
+*.blend1
+*.res
