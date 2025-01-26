@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c135jce8suiul"]
+
+[ext_resource type="Texture2D" uid="uid://p7w37lx5bd17" path="res://materials/menubuttons.png" id="1_ykgux"]
+
+[resource]
+albedo_texture = ExtResource("1_ykgux")
+texture_filter = 0
