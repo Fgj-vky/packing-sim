@@ -32,6 +32,9 @@ transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, 0, 0, 0)
 mesh = ExtResource("3_k1kyd")
 skeleton = NodePath("../..")
 
+[node name="Camera3D" type="Camera3D" parent="RigidBody3D/Belt"]
+transform = Transform3D(-0.0740798, -0.143421, 0.473226, -0.0221813, 0.478989, 0.141695, -0.493984, -1.0828e-08, -0.0773293, 2.93115, 1.21294, 2.21296e-07)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999997, 0, 0.375357, 0)
 shape = SubResource("BoxShape3D_klcp5")
