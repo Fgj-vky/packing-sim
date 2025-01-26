@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://btluxgjxjnjwb"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_eu3pg"]
+[ext_resource type="ArrayMesh" uid="uid://dx6vjf46qr2t4" path="res://models/lamp/lampMesh.res" id="2_b25nf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i4uex"]
+points = PackedVector3Array(-0.6, 0.6, 0, -0.424276, 0.6, -0.424276, -0.400078, 0, 0, -0.424276, 0.6, 0.424158, -0.240094, 1.2, 0, 0, 0.6, -0.6, 0, 0, -0.400078, -0.28285, 0, -0.28285, -0.169734, 1.2, -0.169734, 0, 1.2, -0.240094, -0.28285, 0, 0.282733, 0, 0.6, 0.6, 0, 1.2, 0.239977, -0.169734, 1.2, 0.169616, 0.424158, 0.6, -0.424276, 0.282733, 0, -0.28285, 0.169616, 1.2, -0.169734, 0, 0, 0.399961, 0.424158, 0.6, 0.424158, 0.169616, 1.2, 0.169616, 0.6, 0.6, 0, 0.239977, 1.2, 0, 0.399961, 0, 0, 0.282733, 0, 0.282733)
+
+[node name="DragableObject2" instance=ExtResource("1_eu3pg")]
+center_of_mass_mode = 1
+center_of_mass = Vector3(0.4, 0, 0)
+itemName = "lamp"
+fragile = true
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("ConvexPolygonShape3D_i4uex")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = ExtResource("2_b25nf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.02599, 0)
+light_energy = 4.0
+spot_angle = 52.5758

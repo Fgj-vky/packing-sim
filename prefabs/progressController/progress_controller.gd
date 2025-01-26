@@ -23,6 +23,15 @@ func processBox(box: Box, order: Array[String]):
 	var fragileItems = box.fragileItems;
 	var correctItems = 0;
 	var errors: Array[String] = [];
+
+
+	var score = 0
+	if box.containerSize == 3 and box.itemNames.size() < 3:
+		score -= 1;
+		errors.append("Wrong box for <3 items");
+
+
+	
 	for item in order:
 		if box.itemNames.find(item) >= 0:
 			box.itemNames.erase(item);
@@ -36,7 +45,6 @@ func processBox(box: Box, order: Array[String]):
 
 	boxes += 1;
 
-	var score = 0
 	if box.hasReceipt:
 		score += 2;
 	else:
@@ -61,9 +69,6 @@ func processBox(box: Box, order: Array[String]):
 		score -= 2;
 		errors.append("Incorrect items");
 
-	if box.containerSize == 3 and box.itemNames.size() < 3:
-		score -= 1;
-		errors.append("Wrong box for <3 items");
 
 	if fragileItems.size() > 0:
 		for item in fragileItems:
