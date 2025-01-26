@@ -109,7 +109,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0140
 gameController = NodePath("../GameController")
 
 [node name="Lever" parent="." instance=ExtResource("12_5vplb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3777, 0.0499992, 2.96828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3777, 0.483032, 2.96828)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.438353, 0.539433, -0.718929, 0.810369, 0.108786, 0.575732, 0.388778, -0.834972, -0.389453, -12.8413, 6.66782, -6.52792)
