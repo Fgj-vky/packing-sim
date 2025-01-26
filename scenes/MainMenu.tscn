@@ -202,7 +202,7 @@ offset_right = 62.0
 offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Mady By:"
+text = "Made By:"
 
 [editable path="BoxS"]
 [editable path="Start"]
