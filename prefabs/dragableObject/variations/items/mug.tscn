@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdb8sgnepesjd"]
+
+[ext_resource type="PackedScene" uid="uid://cwh5582l31gnm" path="res://prefabs/dragableObject/dragableObject.tscn" id="1_rf2gv"]
+[ext_resource type="ArrayMesh" uid="uid://b2c64qjvusr5o" path="res://models/mug/mugMesh.res" id="2_udrh3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_07f5n"]
+points = PackedVector3Array(-7.83205e-05, 0, -0.400051, 0.00258416, 0.164411, -0.613375, 0.282772, 0, -0.282962, -0.28285, 0, -0.282962, -0.000548184, 0.408757, -0.790232, 0.282772, 0.843608, -0.282962, 0.4, 0, -8.38041e-05, 0.0765857, 0.424033, -0.714503, -0.4, 0, -8.38041e-05, -0.28285, 0.843608, -0.282962, -0.0767424, 0.418088, -0.714736, -0.0759593, 0.655167, -0.622579, -0.00540331, 0.727174, -0.66056, 0.0758809, 0.667223, -0.623045, 0.4, 0.843608, -8.38041e-05, -7.83205e-05, 0.843608, -0.400051, 0.282772, 0, 0.282794, -0.28285, 0, 0.282794, -0.4, 0.843608, -8.38041e-05, 0.282772, 0.843608, 0.282794, -7.83205e-05, 0, 0.4, -0.28285, 0.843608, 0.282794, -7.83205e-05, 0.843608, 0.4)
+
+[node name="DragableObject2" instance=ExtResource("1_rf2gv")]
+itemName = "mug"
+fragile = true
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("ConvexPolygonShape3D_07f5n")
+
+[node name="MeshInstance3D" parent="." index="1"]
+mesh = ExtResource("2_udrh3")

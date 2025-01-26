@@ -8,7 +8,6 @@
 size = Vector3(1.6438, 0.251709, 0.632568)
 
 [node name="DragableObject2" instance=ExtResource("1_7vthg")]
-can_sleep = false
 script = ExtResource("2_0cvr0")
 jumpTime = 2.0
 jumpForce = 200.0
