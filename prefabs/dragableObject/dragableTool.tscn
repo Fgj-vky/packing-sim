@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://con5blwk6qls1"]
+[gd_scene load_steps=7 format=3 uid="uid://con5blwk6qls1"]
 
 [ext_resource type="Script" path="res://prefabs/dragableObject/dragableTool.gd" id="1_0rfsr"]
 [ext_resource type="Texture2D" uid="uid://b5wwb7xdhs46w" path="res://textures/shadow.png" id="2_44t55"]
+[ext_resource type="FontFile" uid="uid://c4pgqicvroaa" path="res://SpaceGrotesk-VariableFont_wght.ttf" id="3_eailn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4h5ay"]
 friction = 0.1
@@ -13,7 +14,6 @@ friction = 0.1
 [node name="DragableTool" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_4h5ay")
 script = ExtResource("1_0rfsr")
-itemSize = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_42tu3")
@@ -28,6 +28,23 @@ top_level = true
 size = Vector3(2, 10, 2)
 texture_albedo = ExtResource("2_44t55")
 lower_fade = 0.0
+
+[node name="KeyPrompt" type="Node3D" parent="."]
+visible = false
+
+[node name="Apply" type="Label3D" parent="KeyPrompt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.357198, 0.737067, -0.247613)
+billboard = 1
+text = "[W]"
+font = ExtResource("3_eailn")
+font_size = 48
+
+[node name="Rotate" type="Label3D" parent="KeyPrompt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0339149, -0.450983, 0.374964)
+billboard = 1
+text = "<-[Q] |[E] ->"
+font = ExtResource("3_eailn")
+font_size = 48
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
