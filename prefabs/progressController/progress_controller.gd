@@ -61,6 +61,10 @@ func processBox(box: Box, order: Array[String]):
 		score -= 2;
 		errors.append("Incorrect items");
 
+	if box.containerSize == 3 and box.itemNames.size() < 3:
+		score -= 1;
+		errors.append("Wrong box for <3 items");
+
 	if fragileItems.size() > 0:
 		for item in fragileItems:
 			score -= 1;

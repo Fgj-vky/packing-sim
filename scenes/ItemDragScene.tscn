@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bdb8sgnepesjd" path="res://prefabs/dragableObject/variations/items/mug.tscn" id="10_nm5qk"]
 [ext_resource type="PackedScene" uid="uid://cvjky7um08ynn" path="res://prefabs/dragableObject/variations/wrapped/wrappedCube.tscn" id="10_sc1ch"]
 [ext_resource type="PackedScene" uid="uid://bj7f46cpecyer" path="res://prefabs/dragableObject/variations/wrapped/wrappedSphere.tscn" id="11_1t58m"]
-[ext_resource type="PackedScene" uid="uid://bh53ldogxwovp" path="res://prefabs/dragableObject/variations/items/plant.tscn" id="11_m3wyt"]
+[ext_resource type="PackedScene" path="res://prefabs/dragableObject/variations/items/plant.tscn" id="11_m3wyt"]
 [ext_resource type="PackedScene" uid="uid://daqw46o7yikq5" path="res://prefabs/scale/scale.tscn" id="11_o0jds"]
 [ext_resource type="PackedScene" uid="uid://c7nqiv6f5qxaq" path="res://prefabs/lever/lever.tscn" id="12_5vplb"]
 [ext_resource type="PackedScene" uid="uid://dyo55vh4xa6t7" path="res://prefabs/dragableObject/variations/wrapped/wrappedVase.tscn" id="13_p8p6y"]
