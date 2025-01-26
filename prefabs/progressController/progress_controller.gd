@@ -52,7 +52,7 @@ func processBox(box: Box, order: Array[String]):
 		score += 2;
 	else:
 		score -= 1;
-		errors.append("Less than 4 pieces of tape");
+		errors.append("Less than 4 tapes");
 
 	if correctItems == requiredItems:
 		score += 4;

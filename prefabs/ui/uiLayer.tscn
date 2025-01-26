@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3cqrd5mkwyjx"]
+[gd_scene load_steps=5 format=3 uid="uid://d3cqrd5mkwyjx"]
 
 [ext_resource type="Theme" uid="uid://d3c0omgftm182" path="res://theme.tres" id="1_65tvp"]
 [ext_resource type="Script" path="res://prefabs/ui/uiController.gd" id="1_ixsxp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1ixb"]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Gradient" id="Gradient_saae1"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -31,8 +26,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -290.0
-offset_top = 2.0
+offset_left = -333.0
+offset_top = -38.0
 offset_bottom = 276.0
 grow_horizontal = 0
 
@@ -41,6 +36,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 37.0
+offset_right = -1.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -78,6 +76,7 @@ anchor_bottom = 1.0
 offset_left = -1.0
 offset_top = -346.0
 offset_right = 566.08
+offset_bottom = 49.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
@@ -85,12 +84,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -3.0
-offset_right = 13.0
+offset_right = -3.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 25
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
@@ -99,6 +99,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 0
 
 [node name="mButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -106,28 +107,24 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
 theme = ExtResource("1_65tvp")
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1ixb")
 text = "Create medium Box [2]"
 
 [node name="sButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1ixb")
 text = "Create small Box [1]"
 
 [node name="sendButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1ixb")
-text = "Send current box Away [Backspace]"
+text = "Send box [Backspace]"
 
 [node name="closeButton" type="Button" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_g1ixb")
 text = "Close Box [Enter]"
 
 [node name="Fade" type="TextureRect" parent="."]
@@ -157,7 +154,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 22.0
 offset_right = 216.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
@@ -180,8 +179,9 @@ theme = ExtResource("1_65tvp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Menu/Panel"]
 layout_mode = 2
+offset_top = 28.0
 offset_right = 276.0
-offset_bottom = 209.0
+offset_bottom = 181.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
@@ -191,7 +191,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Menu/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(0, 37.905)
 layout_mode = 2
 theme = ExtResource("1_65tvp")
 text = "Menu"
@@ -217,12 +217,14 @@ text = "Quit
 "
 
 [node name="Panel3" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 752.0
+offset_top = -47.0
 offset_right = -631.0
-offset_bottom = 365.0
+offset_bottom = 268.0
 grow_horizontal = 2
 theme = ExtResource("1_65tvp")
 
@@ -231,6 +233,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 35.0
 offset_right = -2.0
 offset_bottom = -2.0
 grow_horizontal = 2
