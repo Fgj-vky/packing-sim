@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmmg85tftws1a"]
+[gd_scene load_steps=25 format=3 uid="uid://cmmg85tftws1a"]
 
 [ext_resource type="PackedScene" uid="uid://d3cqrd5mkwyjx" path="res://prefabs/ui/uiLayer.tscn" id="1_cfo8p"]
 [ext_resource type="PackedScene" uid="uid://dhb0shfwlj13b" path="res://prefabs/bubbleWrapStation/bubbleWrapStation.tscn" id="1_g2c5u"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://bj7f46cpecyer" path="res://prefabs/dragableObject/variations/wrapped/wrappedSphere.tscn" id="11_1t58m"]
 [ext_resource type="PackedScene" uid="uid://daqw46o7yikq5" path="res://prefabs/scale/scale.tscn" id="11_o0jds"]
 [ext_resource type="PackedScene" uid="uid://c7nqiv6f5qxaq" path="res://prefabs/lever/lever.tscn" id="12_5vplb"]
-[ext_resource type="PackedScene" uid="uid://bdm02cmw2tw3l" path="res://prefabs/dragableObject/variations/wrapped/wrappedSword.tscn" id="12_w7lpd"]
 [ext_resource type="PackedScene" uid="uid://dyo55vh4xa6t7" path="res://prefabs/dragableObject/variations/wrapped/wrappedVase.tscn" id="13_p8p6y"]
 [ext_resource type="PackedScene" uid="uid://cfqo3k3eu86qm" path="res://models/boxpiles/boxpile_01.glb" id="20_m7wd0"]
 [ext_resource type="PackedScene" uid="uid://c4v141mmmsuwr" path="res://models/boxpiles/boxpile_02.glb" id="21_rpx4f"]
@@ -87,7 +86,7 @@ transform = Transform3D(0.996698, 0.0264252, -0.0767716, -0.0235596, 0.999, 0.03
 
 [node name="BubbleWrapStation" parent="." instance=ExtResource("1_g2c5u")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 7.06589, 0, 0.404879)
-wrappedItemScenes = Array[PackedScene]([ExtResource("9_emt8h"), ExtResource("10_sc1ch"), ExtResource("11_1t58m"), ExtResource("12_w7lpd"), ExtResource("13_p8p6y")])
+wrappedItemScenes = Array[PackedScene]([ExtResource("9_emt8h"), ExtResource("10_sc1ch"), ExtResource("11_1t58m"), ExtResource("13_p8p6y")])
 
 [node name="tapeRoller" parent="." node_paths=PackedStringArray("gameController") instance=ExtResource("5_7xu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77912, 0.0500007, -0.0437994)
