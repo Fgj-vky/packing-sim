@@ -13,6 +13,7 @@ size = Vector3(2.03711, 0.327366, 0.59082)
 
 [node name="DragableObject2" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_4h5ay")
+can_sleep = false
 script = ExtResource("1_41c0n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

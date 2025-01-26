@@ -16,6 +16,7 @@ func activate():
 		packedItem.itemName = item.itemName
 		packedItem.itemSize = item.itemSize
 		packedItem.global_transform = item.global_transform
+		packedItem.fragile = false
 		packedItems.append(packedItem)
 		item.onRemoved()	
 		item.queue_free()

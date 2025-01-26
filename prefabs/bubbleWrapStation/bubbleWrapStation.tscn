@@ -31,6 +31,7 @@ input_ray_pickable = false
 shape = SubResource("BoxShape3D_4qhlg")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+input_ray_pickable = false
 freeze = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]

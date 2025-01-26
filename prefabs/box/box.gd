@@ -20,6 +20,7 @@ var hasReceipt: bool = false
 
 var tapeCount = 0
 var stampCount = 0
+var fragileItems: Array[String] = []
 
 signal fill_amount_changed(new_value:float);
 
@@ -43,6 +44,8 @@ func open():
 func close():
 	var fill = fillAmount;
 	for item in itemsInTheBox:
+		if item.fragile:
+			fragileItems.append(item.itemName)
 		itemNames.append(item.itemName);
 	animPlayer.play_backwards("Open");
 	audioPlayer.stream = closeSound;

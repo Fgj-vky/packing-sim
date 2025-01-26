@@ -10,6 +10,7 @@ points = PackedVector3Array(-0.347935, 0.223444, -6.81281e-05, -0.246034, 0.2234
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.3, 0)
 itemName = "vase"
+fragile = true
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("ConvexPolygonShape3D_2vg0s")
